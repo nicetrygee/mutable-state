@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  <title>What AI Pair Programming Actually Changes · mutable state</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; color: #e8e8e8; background-color: #242428; line-height: 1.8; padding: 2em; max-width: 900px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: #9474f4; text-decoration: none; }
+    a:visited { color: #9474f4; }
+    a:hover { text-decoration: underline; }
+    h1 { font-size: 3em; font-weight: 700; text-align: center; margin: 0.4em 0 0.2em; font-family: 'Roboto Mono', monospace; }
+    h1 a { color: #9474f4; text-decoration: none; }
+    h1 a:visited { color: #9474f4; }
+    .site-tagline { text-align: center; color: #aaaaaa; font-size: 0.85em; margin-bottom: 1.5em; }
+    h2 { font-size: 1.5em; font-weight: bold; color: #9474f4; margin: 1em 0 0.5em; }
+    h3 { font-size: 1.1em; font-weight: bold; color: #9474f4; margin: 1.5em 0 0.2em; }
+    p { margin: 0 0 0.8em; color: #e8e8e8; font-size: 1em; line-height: 1.8; }
+    ul, ol { margin: 0 0 1em 2em; padding: 0; font-size: 1em; color: #e8e8e8; line-height: 1.8; }
+    li { margin-bottom: 0.3em; }
+    main { flex: 1; }
+    footer { text-align: center; padding: 2em 0 1em; color: #e8e8e8; font-size: 0.75em; }
+    pre { font-family: 'Courier New', monospace; font-size: 0.875em; background: #2a2a2a; color: #e8e8e8; padding: 1em; overflow-x: auto; margin: 1em 0; }
+    code { font-family: 'Courier New', monospace; font-size: 0.875em; background: #2a2a2a; color: #e8e8e8; padding: 0.1em 0.3em; }
+    pre code { background: none; padding: 0; }
+  </style>
+</head>
+<body>
+<h1><a href="/">mutable state</a></h1>
+<p class="site-tagline">Thoughts about software engineering, careers and what I've learned along the way.</p>
+<main>
+
+<h1 style="margin-bottom: 1em;">What AI Pair Programming Actually Changes</h1>
+<p>I&rsquo;ve spent several months using AI coding tools heavily — across Python, Java, and infrastructure work. Here&rsquo;s what I&rsquo;ve actually noticed.</p>
+<h3 id="the-bottleneck-moves">The bottleneck moves</h3>
+<p>Before: I spent a lot of time writing boilerplate, looking up syntax, and translating intent into code.</p>
+<p>After: I spend almost no time on those things. The bottleneck is now upstream — in the quality of my thinking before I touch the keyboard.</p>
+<p>This is not a small shift. It means that knowing <em>what</em> to build, and <em>why</em>, matters more than ever. The execution gap between a senior and junior engineer used to partially mask differences in design thinking. That gap is closing fast.</p>
+<h3 id="it-surfaces-bad-architecture-immediately">It surfaces bad architecture immediately</h3>
+<p>When you can generate an implementation in seconds, you discover very quickly whether your design is sound. If you find yourself fighting the AI, constantly correcting and re-prompting, it&rsquo;s usually a signal that the problem is under-specified or the design has a flaw.</p>
+<p>Good abstractions feel effortless to implement with AI assistance. Bad ones feel like you&rsquo;re pushing uphill.</p>
+<h3 id="what-it-hasnt-changed">What it hasn&rsquo;t changed</h3>
+<p>Code review still requires careful human judgement. The AI will confidently produce plausible-looking code that is subtly wrong in ways that only domain knowledge can catch.</p>
+<p>And it still can&rsquo;t tell you what the right thing to build is. That remains stubbornly human.</p>
+<h3 id="the-management-implication">The management implication</h3>
+<p>If you&rsquo;re leading engineering teams, the question is no longer &ldquo;can your engineers write code?&rdquo; It&rsquo;s &ldquo;can your engineers think clearly about problems?&rdquo; The leverage on good thinking has just gone up by an order of magnitude.</p>
+<p>That changes hiring, onboarding, and how you run technical conversations. Worth taking seriously.</p>
+
+
+</main>
+<footer>© mutable state 2026</footer>
+</body>
+</html>

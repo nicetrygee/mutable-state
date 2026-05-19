@@ -1,0 +1,11 @@
+{{ define "main" }}
+{{ $posts := where .Site.RegularPages "Type" "posts" }}
+{{ $postsByYear := $posts.GroupByDate "2006" }}
+<h3>Posts</h3>
+{{ range $postsByYear }}
+<h3>{{ .Key }}</h3>
+{{ range .Pages }}
+<p><a href="{{ .Permalink }}">{{ .Title }}</a>{{ with .Params.tagline }} · {{ . }}{{ end }}</p>
+{{ end }}
+{{ end }}
+{{ end }}

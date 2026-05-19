@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mutable state</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on mutable state</description>
+    <generator>Hugo</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Thu, 22 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Engineering Management in the Age of Continuous Judgement</title>
+      <link>http://localhost:1313/engineering-management-in-the-age-of-continuous-judgement/</link>
+      <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/engineering-management-in-the-age-of-continuous-judgement/</guid>
+      <description>&lt;p&gt;There’s a subtle but important misunderstanding emerging in how people talk about AI in software engineering. It’s often framed as a shift in productivity, or maybe even a shift in roles with engineers becoming more like managers. But in my opinion that framing misses the deeper change.&lt;/p&gt;&#xA;&lt;p&gt;AI is not primarily changing who does the work. It is changing the structure in which judgement is exercised.Because when execution becomes super cheap, fast, and increasingly AI-mediated, engineering stops being a sequence of discrete decisions followed by implementation. Instead, it becomes a continuous stream of judgement. Every prompt is a design choice. Every generated diff is a trade-off. Every acceptance is a validation of system understanding.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>On Engineering Teams and Mutable State</title>
+      <link>http://localhost:1313/on-engineering-teams-and-mutable-state/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/on-engineering-teams-and-mutable-state/</guid>
+      <description>&lt;p&gt;The analogy I keep coming back to is this: managing an engineering team is less like writing a program and more like maintaining one that&amp;rsquo;s already running in production.&lt;/p&gt;&#xA;&lt;p&gt;You didn&amp;rsquo;t write most of the code. Some of it is undocumented. Parts of it are brilliant. Other parts make you wince. And you can&amp;rsquo;t just stop the world and rewrite it — the system has to keep running while you improve it.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>What AI Pair Programming Actually Changes</title>
+      <link>http://localhost:1313/what-ai-pair-programming-actually-changes/</link>
+      <pubDate>Wed, 02 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/what-ai-pair-programming-actually-changes/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve spent several months using AI coding tools heavily — across Python, Java, and infrastructure work. Here&amp;rsquo;s what I&amp;rsquo;ve actually noticed.&lt;/p&gt;&#xA;&lt;h3 id=&#34;the-bottleneck-moves&#34;&gt;The bottleneck moves&lt;/h3&gt;&#xA;&lt;p&gt;Before: I spent a lot of time writing boilerplate, looking up syntax, and translating intent into code.&lt;/p&gt;&#xA;&lt;p&gt;After: I spend almost no time on those things. The bottleneck is now upstream — in the quality of my thinking before I touch the keyboard.&lt;/p&gt;&#xA;&lt;p&gt;This is not a small shift. It means that knowing &lt;em&gt;what&lt;/em&gt; to build, and &lt;em&gt;why&lt;/em&gt;, matters more than ever. The execution gap between a senior and junior engineer used to partially mask differences in design thinking. That gap is closing fast.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Delivery Manager Trap</title>
+      <link>http://localhost:1313/the-delivery-manager-trap/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/the-delivery-manager-trap/</guid>
+      <description>&lt;p&gt;There&amp;rsquo;s a version of technical delivery management that looks productive and isn&amp;rsquo;t.&lt;/p&gt;&#xA;&lt;p&gt;It goes like this: you run the standups, you chase the dependencies, you update the JIRA board, you write the status report, you attend the steering committee. You are &lt;em&gt;busy&lt;/em&gt;. The team is shipping. Everything looks fine.&lt;/p&gt;&#xA;&lt;p&gt;And then six months later you look up and realise you have no idea what the team is actually building, whether it&amp;rsquo;s the right thing, or whether any of it will matter.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

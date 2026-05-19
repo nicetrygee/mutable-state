@@ -1,0 +1,10 @@
+baseURL = "https://yourdomain.com"   # update before going live
+languageCode = "en-gb"
+title = "mutable state"
+
+[params]
+  author = "mutable state"
+  description = "Engineering, management, and the space between."
+
+[permalinks]
+  posts = "/:slug/"

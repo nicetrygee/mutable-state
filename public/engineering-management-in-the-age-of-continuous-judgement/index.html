@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  <title>Engineering Management in the Age of Continuous Judgement · mutable state</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; color: #e8e8e8; background-color: #242428; line-height: 1.8; padding: 2em; max-width: 900px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: #9474f4; text-decoration: none; }
+    a:visited { color: #9474f4; }
+    a:hover { text-decoration: underline; }
+    h1 { font-size: 3em; font-weight: 700; text-align: center; margin: 0.4em 0 0.2em; font-family: 'Roboto Mono', monospace; }
+    h1 a { color: #9474f4; text-decoration: none; }
+    h1 a:visited { color: #9474f4; }
+    .site-tagline { text-align: center; color: #aaaaaa; font-size: 0.85em; margin-bottom: 1.5em; }
+    h2 { font-size: 1.5em; font-weight: bold; color: #9474f4; margin: 1em 0 0.5em; }
+    h3 { font-size: 1.1em; font-weight: bold; color: #9474f4; margin: 1.5em 0 0.2em; }
+    p { margin: 0 0 0.8em; color: #e8e8e8; font-size: 1em; line-height: 1.8; }
+    ul, ol { margin: 0 0 1em 2em; padding: 0; font-size: 1em; color: #e8e8e8; line-height: 1.8; }
+    li { margin-bottom: 0.3em; }
+    main { flex: 1; }
+    footer { text-align: center; padding: 2em 0 1em; color: #e8e8e8; font-size: 0.75em; }
+    pre { font-family: 'Courier New', monospace; font-size: 0.875em; background: #2a2a2a; color: #e8e8e8; padding: 1em; overflow-x: auto; margin: 1em 0; }
+    code { font-family: 'Courier New', monospace; font-size: 0.875em; background: #2a2a2a; color: #e8e8e8; padding: 0.1em 0.3em; }
+    pre code { background: none; padding: 0; }
+  </style>
+</head>
+<body>
+<h1><a href="/">mutable state</a></h1>
+<p class="site-tagline">Thoughts about software engineering, careers and what I've learned along the way.</p>
+<main>
+
+<h1 style="margin-bottom: 1em;">Engineering Management in the Age of Continuous Judgement</h1>
+<p>There’s a subtle but important misunderstanding emerging in how people talk about AI in software engineering. It’s often framed as a shift in productivity, or maybe even a shift in roles with engineers becoming more like managers. But in my opinion that framing misses the deeper change.</p>
+<p>AI is not primarily changing who does the work. It is changing the structure in which judgement is exercised.Because when execution becomes super cheap, fast, and increasingly AI-mediated, engineering stops being a sequence of discrete decisions followed by implementation. Instead, it becomes a continuous stream of judgement. Every prompt is a design choice. Every generated diff is a trade-off. Every acceptance is a validation of system understanding.</p>
+<p>All of this has a quiet consequence. Engineering Management is no longer operating in a world where judgement is episodic and distributed through hierarchy. It&rsquo;s now operating in a world where judgement is continuous, embedded, and high-frequency across every layer of the system. That changes the nature of the role, not by elevating it or diminishing it, but by increasing the density of what it has always been responsible for improving.</p>
+<h3 id="engineering-management-was-never-about-ownership-of-judgement">Engineering management was never about ownership of judgement</h3>
+<p>A common simplification is to describe Engineering Managers (EM&rsquo;s) as people who “make better decisions” than engineers. That was always inaccurate and lazy. In strong engineering orgs, EM&rsquo;s have always been responsible for something more subtle:</p>
+<ul>
+<li>improving how judgement is formed</li>
+<li>increasing the consistency of decision-making</li>
+<li>reducing variance in interpretation across a team</li>
+<li>creating systems where good decisions are more likely to happen</li>
+</ul>
+<p>In other words, EMs were never the source of judgement. They were part of the system that shaped its quality and this distinction matters more now than it used to because AI doesn&rsquo;t remove judgement from engineers or concentrate it in management. It increases the number of moments where judgement is required and collapses the time between those moments.</p>
+<h3 id="the-collapse-of-the-implementation-buffer">The collapse of the implementation buffer</h3>
+<p>Historically, software engineering had a natural buffer between judgement and consequence.</p>
+<p>You would think through a design -&gt;  implement it over time -&gt; discover issues during build or integration -&gt; iterate. Execution acted as a delay mechanism; absorbing uncertainty. AI compresses that buffer. Now implementation is near-instant. Alternative solutions are cheap to generate. System changes propagate quickly. “Trying things out” becomes the default mode of reasoning, and this removes the reflection layer that previously sat between decision and outcome. As a result, judgement becomes continuous rather than staged and that shifts the cognitive structure of the entire discipline.</p>
+<h3 id="the-real-shift-from-shaping-decisions-to-shaping-decision-environments">The real shift: from shaping decisions to shaping decision environments</h3>
+<p>Engineering managers have always influenced judgement indirectly through team structure and ownership boundaries, architecture reviews and technical direction, coaching and feedback loops, and communication clarity under ambiguity.
+What changes in an AI-mediated system is not the existence of these mechanisms, but their proximity to execution Judgement is no longer primarily shaped upstream and then executed downstream. It&rsquo;s shaped continuously inside the execution loop itself which means EM influence shifts toward a different kind of leverage of not making decisions better, but improving the conditions under which decisions are continuously generated and validated.</p>
+<h3 id="what-changes-in-practice">What changes in practice</h3>
+<p>In an environment of continuous judgement, EM work becomes less about discrete coordination and more about system calibration. Three areas become dominant:</p>
+<ol>
+<li>
+<p>Framing quality -
+How problems are defined before they enter AI-assisted workflows becomes critical. Poor framing produces fast wrong answers. Good framing produces constrained, useful exploration.</p>
+</li>
+<li>
+<p>Validation density -
+Because output is cheap, the cost of accepting incorrect or subtly wrong output increases. EMs become more involved in shaping what “correct enough” actually means in practice.</p>
+</li>
+<li>
+<p>Cognitive coherence across teams -
+As AI accelerates individual throughput, divergence between mental models increases. Maintaining shared understanding becomes harder, not easier.</p>
+</li>
+</ol>
+<p>None of these are new responsibilities but all of them become higher frequency and higher consequence.</p>
+<h3 id="the-compression-of-traditional-coordination">The compression of traditional coordination</h3>
+<p>I believe that some parts of engineering management don&rsquo;t scale upward in this new model. They compress:</p>
+<ul>
+<li>task breakdown becomes automated or implicit</li>
+<li>status reporting loses value when work is continuously visible</li>
+<li>micro-coordination is absorbed into tooling and workflows</li>
+<li>delivery tracking becomes less informative than system health signals</li>
+</ul>
+<p>This doesn&rsquo;t eliminate management but it does remove a layer of management that was previously necessary due to the execution buffer. What remains is higher leverage, but also less surface area.</p>
+<h3 id="the-uncomfortable-implication">The uncomfortable implication</h3>
+<p>The most important shift is not that EM&rsquo;s become more strategic or more technical. It is that the cost of poor judgement has increased faster than the exclusivity of judgement itself. This creates a new pressure where engineers exercise judgement more frequently. AI increases the plausibility of incorrect outputs. Systems evolve faster than human verification cycles.</p>
+<p>In this environment, the value of engineering management becomes less about directing work, and more about stabilising the quality of judgement under speed. Not through control but through shaping environments where good judgement is more likely to emerge repeatedly. The stuff we do all day everyday.</p>
+<h3 id="closing-thoughts">Closing thoughts</h3>
+<p>Judgement is no longer a role-specific capability. It&rsquo;s a system property. It emerges continuously from the interaction between engineers, AI systems, and organisational structure. Engineering managers become less like coordinators of work, and more like designers of judgement conditions. Their influence moves from decisions to decision environments.
+The role doesn&rsquo;t disappear but it becomes less about managing flow, and more about managing coherence under continuous generation.</p>
+
+
+</main>
+<footer>© mutable state 2026</footer>
+</body>
+</html>

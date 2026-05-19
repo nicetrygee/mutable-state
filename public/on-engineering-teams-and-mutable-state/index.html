@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  <title>On Engineering Teams and Mutable State · mutable state</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; color: #e8e8e8; background-color: #242428; line-height: 1.8; padding: 2em; max-width: 900px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: #9474f4; text-decoration: none; }
+    a:visited { color: #9474f4; }
+    a:hover { text-decoration: underline; }
+    h1 { font-size: 3em; font-weight: 700; text-align: center; margin: 0.4em 0 0.2em; font-family: 'Roboto Mono', monospace; }
+    h1 a { color: #9474f4; text-decoration: none; }
+    h1 a:visited { color: #9474f4; }
+    .site-tagline { text-align: center; color: #aaaaaa; font-size: 0.85em; margin-bottom: 1.5em; }
+    h2 { font-size: 1.5em; font-weight: bold; color: #9474f4; margin: 1em 0 0.5em; }
+    h3 { font-size: 1.1em; font-weight: bold; color: #9474f4; margin: 1.5em 0 0.2em; }
+    p { margin: 0 0 0.8em; color: #e8e8e8; font-size: 1em; line-height: 1.8; }
+    ul, ol { margin: 0 0 1em 2em; padding: 0; font-size: 1em; color: #e8e8e8; line-height: 1.8; }
+    li { margin-bottom: 0.3em; }
+    main { flex: 1; }
+    footer { text-align: center; padding: 2em 0 1em; color: #e8e8e8; font-size: 0.75em; }
+    pre { font-family: 'Courier New', monospace; font-size: 0.875em; background: #2a2a2a; color: #e8e8e8; padding: 1em; overflow-x: auto; margin: 1em 0; }
+    code { font-family: 'Courier New', monospace; font-size: 0.875em; background: #2a2a2a; color: #e8e8e8; padding: 0.1em 0.3em; }
+    pre code { background: none; padding: 0; }
+  </style>
+</head>
+<body>
+<h1><a href="/">mutable state</a></h1>
+<p class="site-tagline">Thoughts about software engineering, careers and what I've learned along the way.</p>
+<main>
+
+<h1 style="margin-bottom: 1em;">On Engineering Teams and Mutable State</h1>
+<p>The analogy I keep coming back to is this: managing an engineering team is less like writing a program and more like maintaining one that&rsquo;s already running in production.</p>
+<p>You didn&rsquo;t write most of the code. Some of it is undocumented. Parts of it are brilliant. Other parts make you wince. And you can&rsquo;t just stop the world and rewrite it — the system has to keep running while you improve it.</p>
+<h3 id="state-is-everywhere">State is everywhere</h3>
+<p>In software, <em>mutable state</em> is the source of most complexity. A variable that can change over time is harder to reason about than one that can&rsquo;t. You have to track not just what it is, but what it was, what it will be, and who might be changing it right now.</p>
+<p>People are exactly like this. They carry history. They have context you don&rsquo;t have. They change — sometimes slowly, sometimes suddenly. And unlike variables, they change <em>themselves</em>, often in response to being observed.</p>
+<h3 id="the-temptation-of-immutability">The temptation of immutability</h3>
+<p>There&rsquo;s a reason functional programming has appeal. If nothing changes, everything is predictable. Deterministic. Easy to test.</p>
+<p>Some managers try this. They over-specify, over-process, and over-document in an attempt to make their team behave like a pure function: same input, same output, every time.</p>
+<p>It doesn&rsquo;t work. You end up with a system that&rsquo;s rigid, slow to adapt, and full of people who&rsquo;ve stopped thinking for themselves.</p>
+<h3 id="working-with-the-state-you-have">Working with the state you have</h3>
+<p>The better approach is to understand the state, not eliminate it. Know where the complexity lives. Know which parts of your team are stable and which are in flux. Build systems that handle change gracefully rather than ones that pretend change won&rsquo;t happen.</p>
+<p>Mutable state isn&rsquo;t the enemy. Unobserved mutable state is.</p>
+
+
+</main>
+<footer>© mutable state 2026</footer>
+</body>
+</html>
