@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>mutable state</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:1313/mutable-state/</link>
     <description>Recent content on mutable state</description>
     <generator>Hugo</generator>
     <language>en-gb</language>
     <lastBuildDate>Thu, 22 Jan 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/mutable-state/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Engineering Management in the Age of Continuous Judgement</title>
-      <link>http://localhost:1313/engineering-management-in-the-age-of-continuous-judgement/</link>
+      <link>http://localhost:1313/mutable-state/engineering-management-in-the-age-of-continuous-judgement/</link>
       <pubDate>Thu, 22 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/engineering-management-in-the-age-of-continuous-judgement/</guid>
+      <guid>http://localhost:1313/mutable-state/engineering-management-in-the-age-of-continuous-judgement/</guid>
       <description>&lt;p&gt;There’s a subtle but important misunderstanding emerging in how people talk about AI in software engineering. It’s often framed as a shift in productivity, or maybe even a shift in roles with engineers becoming more like managers. But in my opinion that framing misses the deeper change.&lt;/p&gt;&#xA;&lt;p&gt;AI is not primarily changing who does the work. It is changing the structure in which judgement is exercised.Because when execution becomes super cheap, fast, and increasingly AI-mediated, engineering stops being a sequence of discrete decisions followed by implementation. Instead, it becomes a continuous stream of judgement. Every prompt is a design choice. Every generated diff is a trade-off. Every acceptance is a validation of system understanding.&lt;/p&gt;</description>
     </item>
   </channel>

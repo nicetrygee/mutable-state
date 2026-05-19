@@ -1,4 +1,4 @@
-baseURL = "https://yourdomain.com"   # update before going live
+baseURL = "https://nicetrygee.github.io/mutable-state/"   
 languageCode = "en-gb"
 title = "mutable state"
 
