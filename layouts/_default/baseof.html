@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+  <title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 18px; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; color: #e8e8e8; background-color: #242428; line-height: 1.8; padding: 2em; max-width: 900px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: #9474f4; text-decoration: none; }
+    a:visited { color: #9474f4; }
+    a:hover { text-decoration: underline; }
+    h1 { font-size: 3em; font-weight: 700; text-align: center; margin: 0.4em 0 0.2em; font-family: 'Roboto Mono', monospace; }
+    h1 a { color: #9474f4; text-decoration: none; }
+    h1 a:visited { color: #9474f4; }
+    .site-tagline { text-align: center; color: #aaaaaa; font-size: 0.85em; margin-bottom: 1.5em; }
+    h2 { font-size: 1.5em; font-weight: bold; color: #9474f4; margin: 1em 0 0.5em; }
+    h3 { font-size: 1.1em; font-weight: bold; color: #9474f4; margin: 1.5em 0 0.2em; }
+    p { margin: 0 0 0.8em; color: #e8e8e8; font-size: 1em; line-height: 1.8; }
+    ul, ol { margin: 0 0 1em 2em; padding: 0; font-size: 1em; color: #e8e8e8; line-height: 1.8; }
+    li { margin-bottom: 0.3em; }
+    main { flex: 1; }
+    footer { text-align: center; padding: 2em 0 1em; color: #e8e8e8; font-size: 0.75em; }
+    pre { font-family: 'Courier New', monospace; font-size: 0.875em; background: #2a2a2a; color: #e8e8e8; padding: 1em; overflow-x: auto; margin: 1em 0; }
+    code { font-family: 'Courier New', monospace; font-size: 0.875em; background: #2a2a2a; color: #e8e8e8; padding: 0.1em 0.3em; }
+    pre code { background: none; padding: 0; }
+  </style>
+</head>
+<body>
+<h1><a href="/">{{ .Site.Title }}</a></h1>
+<p class="site-tagline">Thoughts about software engineering, careers and what I've learned along the way.</p>
+<main>
+{{ block "main" . }}{{ end }}
+</main>
+<footer>© {{ .Site.Params.author }} {{ now.Format "2006" }}</footer>
+</body>
+</html>
