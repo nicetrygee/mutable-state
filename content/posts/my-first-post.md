@@ -1,6 +1,5 @@
 ---
 title: Engineering Management in the Age of Continuous Judgement
-tagline: Constant decisions, constant cost.
 date: 2026-01-22
 ---  
 
