@@ -3,8 +3,6 @@ title: "The MVP's Are Those Who Can Connect the Dots"
 date: 2026-07-28
 draft: false
 ---
-# The MVP's Are Those Who Can Connect the Dots
-
 
 ## The AI Productivity Debate
 There is a lot of discussion right now about AI enabling companies to do more with fewer people and many orgs are looking at AI primarily through the lens of efficiency: automate tasks, reduce costs, and remove roles. I think they are looking at it too narrowly and our biggest opportunity with AI is not replacing people. It is making talented people dramatically more capable.
