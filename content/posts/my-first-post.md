@@ -1,5 +1,5 @@
 ---
-title: Engineering Management in the Age of Continuous Judgement
+title: Judgement as a System Property
 date: 2026-01-22
 ---  
 
