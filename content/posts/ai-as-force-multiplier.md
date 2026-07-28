@@ -1,5 +1,5 @@
 ---
-title: AI as a Force Multiplier: Rethinking How We Build Teams
+title: "AI as a Force Multiplier: Rethinking How We Build Teams"
 date: 2026-07-28
 draft: false
 ---
