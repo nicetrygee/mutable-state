@@ -1,31 +1,34 @@
 ---
-title: "AI as a Force Multiplier: Rethinking How We Build Teams"
+title: "AI: The Future Belongs to Those Who Can Connect the Dots"
 date: 2026-07-28
 draft: false
 ---
 
 
 ## The AI Productivity Debate
-There is a lot of discussion right now about AI enabling companies to do more with fewer people and many orgs are looking at AI primarily through the lens of efficiency: automate tasks, reduce costs, and remove roles. I think they are looking at it too narrowly.
-
-The biggest opportunity with AI is not replacing people. It is making talented people dramatically more capable.
+There is a lot of discussion right now about AI enabling companies to do more with fewer people and many orgs are looking at AI primarily through the lens of efficiency: automate tasks, reduce costs, and remove roles. I think they are looking at it too narrowly and our biggest opportunity with AI is not replacing people. It is making talented people dramatically more capable.
 
 ## From Automation to Amplification
-Give a great engineer AI tools and they can explore ideas faster, write better code, automate repetitive work, and spend more time solving meaningful problems.Simlarly, give a product person those same capabilities and they can move from customer insight to prototype faster. Multiply this across an organisation and the impact compounds.
+For example, give a great engineer AI tools and they can explore ideas faster, maybe write better code, automate repetitive work, and spend more time solving 'meaningful' problems. Simlarly, give a product or a delivery person those same capabilities and they can also do more while moving faster. Multiply this across an org and the impact compounds.
 
 The question becomes less about **"how many people can AI replace?"** and more about **"what can our people achieve when AI removes the friction?"**
 
 ## The Rise of the Product Builder
-One emerging example of this shift is the rise of the **Product Builder** role. Companies such as eToro and Updoc are advertising roles that blur the traditional boundaries between product management, engineering, design, and business analysis.
+An emerging example of this shift is the rise of the **Product Builder** role. Companies such as eToro and Updoc are advertising roles that blur the traditional boundaries between product management, engineering, delivery, design, and business analysis.
 
-I think the Product Builder represents a new type of AI-enabled role: someone who can identify customer problems, shape solutions, use AI tools to rapidly prototype and build, analyse outcomes, and continuously iterate without always relying on the traditional handoffs between specialist teams. 
+The Product Builder represents a type of AI-enabled role where someone who can identify customer problems, shape solutions, can use AI tools to rapidly prototype and build, analyse outcomes, and continuously iterate without all the traditional handoffs to product or engineers or some other specialist teams. 
 
-This is not about replacing engineers, designers, or product managers. It is about creating a new layer of capability where people are empowered to take ideas from concept to customer impact much faster.
+Please understand that i'm not suggesting we replace engineers, delivery managers,designers, or product managers. This is about creating a new layer of capability where people are empowered to take ideas from concept to customer impact much faster.
 
-## The Future of Software Delivery
-The future org may not be built around large numbers of narrowly defined roles. Instead, it may be made up of smaller, highly capable, AI-augmented teams that can own problems end-to-end and move from opportunity to execution at a pace that was previously impossible.
+## The Future Belongs to Those Who Can Connect the Dots
+I hope the future org is not built around large numbers of narrowly defined roles but instead, made up of smaller, highly capable, AI-augmented teams that can own problems e2e and move from opportunity to execution at a pace that was previously impossible.
 
-The traditional model of passing work between product, design, engineering, and analysis may evolve into teams where more people can take ownership of the full problem space. I love this because i equally enjoy engineering, product, and delivery but I've never been able to escape being pigeon holded into one of those roles. AI sallow me to be all three now!
+The traditional model of passing work between product, design, engineering, and analysis will hopefully evolve into teams where more people can take ownership of the full problem space. 
+
+## Finding My Place Between Technology, Product, and Delivery
+Personally, I love this!! I've always believed the future belongs to curious, technically capable people who can identify the right problems to solve, understand customers, navigate commercial and technical trade-offs, and then ship solutions. 
+
+This has characterised my career path. I’ve always enjoyed wearing multiple hats of engineer, product thinker, and delivery leader because solving problems requires all three perspectives. Traditional role boundaries has encouraged people to specialise deeply in one area, which meant this cross-functional approach was not always easy to fit into existing structures. I'm so grateful that AI represents a significant shift: it enables curious, technically capable people like me to move more seamlessly between understanding problems, designing solutions, and delivering outcomes.
 
 ## The Competitive Advantage
 Of course, AI will change the shape of work. Some tasks will disappear. Some roles will evolve but orgs that simply use AI to reduce headcount miss the bigger opportunity.
