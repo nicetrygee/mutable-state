@@ -31,10 +31,6 @@ Personally, I love this!! I've always believed the future belongs to curious, te
 This has characterised my career path. I’ve always enjoyed wearing multiple hats of engineer, product thinker, and delivery leader because solving problems requires all three perspectives. Traditional role boundaries has encouraged people to specialise deeply in one area, which meant this cross-functional approach was not always easy to fit into existing structures. I'm so grateful that AI represents a significant shift: it enables curious, technically capable people like me to move more seamlessly between understanding problems, designing solutions, and delivering outcomes.
 
 ## The Competitive Advantage
-Of course, AI will change the shape of work. Some tasks will disappear. Some roles will evolve but orgs that simply use AI to reduce headcount miss the bigger opportunity.
+Of course, AI will change the shape of work. Some tasks will disappear. Some roles will evolve but orgs that simply use AI to reduce headcount miss the bigger opportunity. The real competitive advantage will come from building teams where people and AI work together and where employees can move faster, think bigger, and create more value.
 
-The real competitive advantage will come from building teams where people and AI work together — where employees can move faster, think bigger, and create more value.
-
-AI is not just a technology for reducing costs. It is a technology for unlocking human capability at scale.
-
-The companies that understand this will not just become more efficient. They will become more innovative, more adaptable, and better positioned to compete.
+AI is not just a technology for reducing costs. It is a technology for unlocking human capability at scale.The companies that understand this will not just become more efficient. They will become more innovative, more adaptable, and better positioned to compete.
