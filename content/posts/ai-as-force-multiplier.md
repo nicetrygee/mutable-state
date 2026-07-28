@@ -5,8 +5,6 @@ draft: false
 ---
 
 
-# AI as a Force Multiplier: Rethinking How We Build Teams
-
 ## The AI Productivity Debate
 There is a lot of discussion right now about AI enabling companies to do more with fewer people and many orgs are looking at AI primarily through the lens of efficiency: automate tasks, reduce costs, and remove roles. I think they are looking at it too narrowly.
 
