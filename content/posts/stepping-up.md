@@ -1,5 +1,5 @@
 ---
-title: "Making the Jump to <del>Hyperspace</del> Senior"
+title: "Making the Jump to Senior"
 slug: "making-the-jump-to-senior"
 date: 2026-08-07
 draft: false
@@ -22,7 +22,7 @@ An agent learns by reading code. It's never sat in a meeting room so it doesn't 
 What am I saying? If you want to be senior, it's important to start acting like it. Please don't wait for the title. Start taking ownership of problems, making decisions, and being accountable for the outcomes. Show that you can handle ambiguity and complexity, and that you can lead initiatives without needing constant guidance.
 
 ## The Glue Work Trap
-Sorry. Another Star Wars ref. Facepalm. A big part of stepping up means taking ownership of work that wasn't assigned to anyone and it divides into technical and organizational work. My strong preference is to default to the technical because an engineer's primary responsibility is to ship and maintain code.
+A big part of stepping up means taking ownership of work that wasn't assigned to anyone and it divides into technical and organizational work. My strong preference is to default to the technical because an engineer's primary responsibility is to ship and maintain code.
 
 The organizational work is the maintaining of the board, onboarding newcomers, writing documentation, coordinating incident communication and this also carries real value. Tanya Reilly terms it glue work, and her caution is important: glue work is expected of seniors and hazardous for non-seniors if they don't carefully balance it. It should be done deliberately and in proportion. An engineer whose entire contribution is glue tends to become indispensable to the team but invisible to promotion unless you have a darn good Engineering Manager or manager who can advocate for you. In my experience, the best way to avoid this trap is to make sure that the glue work is in service of technical work and that the technical work is visible and impactful.
 
