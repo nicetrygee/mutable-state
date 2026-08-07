@@ -1,5 +1,5 @@
 ---
-title: "The MVP's Are Those Who Can Connect the Dots"
+title: "Revenge of the Generalist"
 date: 2026-07-28
 draft: false
 ---
@@ -19,7 +19,7 @@ The Product Builder represents a type of AI-enabled role where someone who can i
 
 Please understand that i'm not suggesting we replace engineers, delivery managers,designers, or product managers. This is about creating a new layer of capability where people are empowered to take ideas from concept to customer impact much faster.
 
-## The MVP's Are Those Who Can Connect the Dots
+## Connecting the Dots
 I hope the future org is not built around large numbers of narrowly defined roles but instead, made up of smaller, highly capable, AI-augmented teams that can own problems e2e and move from opportunity to execution at a pace that was previously impossible.
 
 The traditional model of passing work between product, design, engineering, and analysis will hopefully evolve into teams where more people can take ownership of the full problem space. 
