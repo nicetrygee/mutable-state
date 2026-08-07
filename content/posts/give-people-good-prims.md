@@ -1,6 +1,6 @@
 ---
-title: "An Ode to Prefect"
-slug: "an-ode-to-prefect"
+title: "Give People Good Primitives"
+slug: "give-people-good-primitives"
 date: 2026-08-07
 draft: false
 ---
