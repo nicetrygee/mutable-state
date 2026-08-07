@@ -1,5 +1,6 @@
 ---
-title: "Making the Jump to ~~Hyperspace~~ Senior"
+title: "Making the Jump to <del>Hyperspace</del> Senior"
+slug: "making-the-jump-to-senior"
 date: 2026-08-07
 draft: false
 ---
