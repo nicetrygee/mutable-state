@@ -33,8 +33,8 @@ Technical opportunities are consistent across companies. Tests for an under-test
 
 
 ## Sources
-The Age of Agentic AI: What Engineering Jobs Actually Look Like in 2026
-AI Agents Don't Replace Senior Engineers — They Demand More
-AI Code Quality: The Hidden Cost Senior Engineers Pay
-Who Owns Engineering Judgment?
-Agentic Engineering: Karpathy's New Framework
+- The Age of Agentic AI: What Engineering Jobs Actually Look Like in 2026
+- AI Agents Don't Replace Senior Engineers — They Demand More
+- AI Code Quality: The Hidden Cost Senior Engineers Pay
+- Who Owns Engineering Judgment?
+- Agentic Engineering: Karpathy's New Framework
