@@ -13,14 +13,14 @@ On a recent team we pushed the controls left, to the moment of generation, and m
 
 We did this in two layers. A repository-wide brief covers what's true everywhere: the architecture, the conventions, the security baseline, the non-negotiables.
 
-# AGENTS.md
+### AGENTS.md
 - Every new component ships with its tests.
 - Never log request bodies; they can contain PII.
 - Use the existing HttpClient wrapper, not raw fetch.
 
 Then path-scoped files attach the right rules to the right code, because the standard for a data-processing job isn't the standard for an infrastructure module, and a single global rules file soon either contradicts itself or goes so vague it's useless.
 
-# ingestion/AGENTS.md
+### ingestion/AGENTS.md
 - Every new source needs validation and a dead-letter queue.
 - Apply config changes to all three environments, or none.
 
