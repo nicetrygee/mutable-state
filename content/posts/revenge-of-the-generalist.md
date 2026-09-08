@@ -5,22 +5,25 @@ draft: false
 ---
 
 ## The AI Productivity Debate
-There is a lot of discussion right now about AI enabling companies to do more with fewer people and many orgs are looking at AI primarily through the lens of efficiency: automate tasks, reduce costs, and remove roles. I think they are looking at it too narrowly and our biggest opportunity with AI is not replacing people. It is making talented people dramatically more capable.
+There's a lot of discussion right now about AI enabling companies to do more with fewer people and many orgs are looking at AI primarily through the lens of efficiency: automate tasks, reduce costs, and remove roles. I think they're looking at it too narrowly and our biggest opportunity with AI is not replacing people. It's making talented people dramatically more capable.
 
 ## Beyond Automation
-For example, give a great engineer AI tools and they can explore ideas faster, maybe write better code, automate repetitive work, and spend more time solving 'meaningful' problems. Similarly, give a product or a delivery person those same capabilities and they can also do more while moving faster. Multiply this across an org and the impact compounds.
+Why not give a great engineer AI tools so they can explore ideas faster, maybe write better code...dare i say it, automate repetitive work, and spend more time solving 'meaningful' problems. Similarly, give a product or a delivery person those same capabilities and they can also do more while moving faster. Multiply this across an org and the impact compounds.
 
 The question becomes less about **"how many people can AI replace?"** and more about **"what can our people achieve when AI removes the friction?"**
 
 ## Emergent Product Builder Roles
-An emerging example of this shift is the rise of the **Product Builder** role. Companies such as eToro and Updoc are advertising roles that blur the traditional boundaries between product management, engineering, delivery, design, and business analysis.
+An emerging example of this shift is the rise of the **Product Builder** and **Forward Deployed** roles. Companies such as eToro and Updoc are advertising roles that blur the traditional boundaries between product management, engineering, delivery, design, and business analysis.
 
-The Product Builder represents a type of AI-enabled role where someone who can identify customer problems, shape solutions, can use AI tools to rapidly prototype and build, analyse outcomes, and continuously iterate without all the traditional handoffs to product or engineers or some other specialist teams. 
+These product builder roles represents a type of AI-enabled role where someone who can identify customer problems, shape solutions, can use AI tools to rapidly prototype and build, analyse outcomes, and continuously iterate without all the traditional handoffs to product or engineers or some other specialist teams. 
+
+My only gripe with these roles is that they are heavily biased towards experienced software engineers. Why? Shouldn't we be leaning on technically capable delivery managers, product managers, and business analysts too, the people who often have the most experience of the customer problem itself? Engineering is fast becoming the easy part. Now that the barriers to entry to coding have been lowered, why would you prefer teaching someone with an engineering background the customer and commercial side, over teaching someone who already lives in that world to build?
+
 
 Please understand that i'm not suggesting we replace engineers, delivery managers,designers, or product managers. This is about creating a new layer of capability where people are empowered to take ideas from concept to customer impact much faster.
 
 ## Connecting the Dots
-I hope the future org is not built around large numbers of narrowly defined roles but instead, made up of smaller, highly capable, AI-augmented teams that can own problems e2e and move from opportunity to execution at a pace that was previously impossible.
+Surely the future org is not built around large numbers of narrowly defined roles but instead, made up of highly capable, AI-augmented individuals that can own problems e2e and move from opportunity to execution at a pace that was previously impossible.
 
 The traditional model of passing work between product, design, engineering, and analysis will hopefully evolve into teams where more people can take ownership of the full problem space. 
 
