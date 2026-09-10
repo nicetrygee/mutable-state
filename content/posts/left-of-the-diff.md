@@ -23,9 +23,13 @@ We did this in two layers. First, a repo-wide brief covering what's true everywh
 For repetitive work that's easy to get subtly wrong, we went a step further and wrapped the whole task in a specialised agent with a deliberately narrow set of tools. We were onboarding data sources, where each new source touched config across environments and had to wire up validation and dead-letter handling identically every time, or you got drift that surfaced later in testing. An agent scoped to exactly that job, that refused to start without its inputs and baked in the safe defaults, turned a fiddly task or runbook into something quite boring. As an Engineering Manager, I never grow old of the boring things that have a tendancy to be the most reliable and scalable. 
 
 ## Caution: Guidance isn't enforcement
-To be clear though: a markdown file is guidance, NOT enforcement. The model can ignore it, and sometimes will. The brief is there to shape the common case, but not to catch the bad one. Catching the bad one is the job of something deterministic that runs regardless of what the agent did, such as a CI, a linter, a policy check, or the review itself. The markdown improves your odds but the pipeline is what actually stops the exception reaching prod.
+To be clear though: a markdown file is guidance, NOT enforcement. The model can ignore it, and sometimes will. The brief is there to shape the common case, but not to catch the bad one. Catching the bad one is the job of something deterministic behind the md file (or skill...whichever you prefer to call it) that runs regardless of what the agent did, such as a CI, a linter, a policy check, or a review pass tht re-checks the policy noted in the md at the PR. The skill makes violations rare and the hook makes them close to impossible. 
 
 The remaining guardrails are cheap and well known, but I'll still state them anyway. We kept our secrets out of the context the agent can see, so there's nothing to leak. Made the test suite incapable of reaching the network. Kept AI-assisted changes on their own worktrees, behind review. This kept accountability with the humans in that whoever merged owns the code. At least to begin with.
 
 ## Consistency is king
 Speed is the obvious benefit but dare I say, the least interesting one. The real payoff is consistency because a newbie in their second week produces roughly what a senior would, in a subsystem neither of them wrote, because the knowledge lives in the repo rather than in whoever happens to be around that day. It makes the safe path also the easy path, and it means the less experienced team member leans on the tool without being a bad PR away from an embarrasing incident. Strip the AI off it and that's just old-fashioned engineering excellence though....make the right way the default way.
+
+
+## Sources
+- The AI-Native SDLC Playbook - Claude Academy
