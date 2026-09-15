@@ -5,34 +5,34 @@ draft: false
 ---
 
 ## The AI Productivity Debate
-There's a lot of discussion right now about AI enabling companies to do more with fewer people and many orgs are looking at AI primarily through the lens of efficiency: automate tasks, reduce costs, and remove roles. I think they're looking at it too narrowly and our biggest opportunity with AI is not replacing people. It's making talented people dramatically more capable.
+There's a lot of discussion right now about AI enabling companies to do more with fewer people and many orgs are looking at AI primarily through the lens of efficiency: automate tasks, reduce costs, and remove roles. I think they're looking at it too narrowly and our biggest opportunity with AI is not replacing people. It's making willing and talented people dramatically more capable. Its real potential is as a force multiplier for creativity, productivity and opportunity discovery.
 
 ## Beyond Automation
-Why not give a great engineer AI tools so they can explore ideas faster, maybe write better code...dare i say it, automate repetitive work, and spend more time solving 'meaningful' problems. Similarly, give a product or a delivery person those same capabilities and they can also do more while moving faster. Multiply this across an org and the impact compounds.
-
-The question becomes less about **"how many people can AI replace?"** and more about **"what can our people achieve when AI removes the friction?"**
+Why not educate and enable every person in the company to use AI effectively, and not just to automate their existing processes, but to rethink how work gets done, prototype new approaches and identify opportunities that weren't previously practical or even visible. Then the question becomes less about **"how many people can AI replace?"** and more about **"what can our people achieve when AI removes the friction?"**
 
 ## Emergent Product Builder Roles
-An emerging example of this shift is the rise of the **Product Builder** and **Forward Deployed** roles. Companies such as eToro and Updoc are advertising roles that blur the traditional boundaries between product management, engineering, delivery, design, and business analysis.
+An emerging example of this shift is the rise of the **Product Builder** and **Forward Deployed** roles. Companies such as eToro and Updoc are advertising these roles that blur the traditional boundaries between product management, engineering, delivery, design, and business analysis.
 
-These product builder roles represents a type of AI-enabled role where someone who can identify customer problems, shape solutions, can use AI tools to rapidly prototype and build, analyse outcomes, and continuously iterate without all the traditional handoffs to product or engineers or some other specialist teams. 
+These product builder roles represents a type of AI-enabled role where someone who can identify customer problems, and shape solutions, can use AI tools to rapidly , and continuously iterate without all the traditional handoffs to product or engineers or some other specialist teams.
 
-My only gripe with these roles is that they are heavily biased towards experienced software engineers. Why? Shouldn't we be leaning on technically capable delivery managers, product managers, and business analysts too, the people who often have the most experience of the customer problem itself? Engineering is fast becoming the easy part. Now that the barriers to entry to coding have been lowered, why would you prefer teaching someone with an engineering background the customer and commercial side, over teaching someone who already lives in that world to build?
+## The Next Generation of Builders
+One thing that frustrates me about these emerging roles is the heavy bias towards experienced software engineers. Why?? If AI is making software development increasingly accessible, shouldn’t we be looking beyond traditional engineering backgrounds? 
 
+What about technically capable Product Managers, Delivery Managers and Business Analysts? These are people who often spend years working directly with customers, understanding complex problems, navigating commercial constraints and identifying opportunities to create value. They already understand the why and many have the technical foundations to learn the how. So why is the default assumption that we should teach an experienced engineer how to understand customers, business problems and commercial realities, rather than teach a technically capable product or delivery professional how to build?
 
-Please understand that i'm not suggesting we replace engineers, delivery managers,designers, or product managers. This is about creating a new layer of capability where people are empowered to take ideas from concept to customer impact much faster.
+I’m not suggesting that software engineering is becoming irrelevant or everyone can become an effective engineer overnight. I'm saying that the economics of building software has changed. AI has lowered the barriers to entry, accelerated development and made it possible for technically capable people from other disciplines to contribute in ways that previously needed years of specialist experience. If AI is changing who can build, shouldn't we also be changing who gets the opportunity to build? So let's relax those rigid and archaic boundaries between these disciplines and be more flexible in how we deploy talent.
 
 ## Connecting the Dots
-Surely the future org is not built around large numbers of narrowly defined roles but instead, made up of highly capable, AI-augmented individuals that can own problems e2e and move from opportunity to execution at a pace that was previously impossible.
+My prediction is a team that previously needed 6 engineers might now need 2-3 highly capable engineers plus people from other disciplines who can now contribute directly to building and experimentation. Senior engineers become increasingly valuable, but their role potentially changes. Rather than being responsible for producing large volumes of code, they become more focused on architecture and tech strategy, tech standards and guardrails and enabling less specialised builders.
 
-The traditional model of passing work between product, design, engineering, and analysis will hopefully evolve into teams where more people can take ownership of the full problem space. 
+Product and delivery people will become more technical. A technically capable PM, BA or Delivery Manager will identify a problem, investigate it, prototype a solution, test it with the biz,  iterate, and build a production-ready case. All without having to hand every step over to another discipline.
 
-## Finding My Place Between Engineering, Product, and Delivery
-Personally, I love this!! I've always believed the future belongs to curious, technically capable people who can identify the right problems to solve, understand customers, navigate commercial and technical trade-offs, and then ship solutions. 
+Teams become capability-based rather than role-based. Instead of the Product Manager owning the problem, or the QA being responsible for quality embedding, we will increasingly have 5-6 AI-augmented problem solvers, with different depths of expertise. Their job won't be to stay in their discipline but to solve the problem. 
 
-This has characterised my career path. I’ve always enjoyed wearing multiple hats of engineer, product thinker, and delivery leader because solving problems requires all three perspectives. Traditional role boundaries has encouraged people to specialise deeply in one area, which meant this cross-functional approach was not always easy to fit into existing structures. I'm so grateful that AI represents a significant shift: it enables curious, technically capable people like me to move more seamlessly between understanding problems, designing solutions, and delivering outcomes.
 
-## Real Competitive Advantage
-Of course, AI will change the shape of work. Some tasks will disappear and roles will evolve but orgs that simply use AI to reduce headcount miss the bigger opportunity. The real competitive advantage will come from building teams where people and AI work together and where employees can move faster, think bigger, and create more value than before.
+## 20 Years of Becoming T-Shaped
+Historically, becoming reasonably competent across product, analysis, design and engineering was extremely difficult and time consuming because each discipline had a substantial learning curve. I know because my career plan has been exactly this. I've done my time as an engineer, business analyst, delivery manager, product manager, and engineering manager. AI doesn't eliminate those learning curves but it does dramatically reduce them and that makes the T-shaped individual much more powerful and I strongly believe that should change the optimal composition of teams.
 
-AI is not just a technology for reducing costs. It is a technology for unlocking human capability at scale.The companies that understand this the earliest will become more efficient, more innovative, more adaptable, and better positioned to compete.
+
+## The Human–AI Advantage
+Of course, AI will change the shape of work. Some tasks will disappear and roles will evolve but orgs that simply use AI to reduce headcount miss the bigger opportunity. The real competitive advantage will come from building teams where people and AI work together and where employees can move faster, think bigger, and create more value than ever before.
