@@ -15,6 +15,9 @@
     h1 { font-size: 3em; font-weight: 700; text-align: center; margin: 0.4em 0 0.2em; font-family: 'Roboto Mono', monospace; }
     h1 a { color: #9474f4; text-decoration: none; }
     h1 a:visited { color: #9474f4; }
+    h1 a::after { content: "\2588"; margin-left: 0.1em; animation: blink 1s step-end infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { h1 a::after { animation: none; } }
     .site-tagline { text-align: center; color: #aaaaaa; font-size: 0.85em; margin-bottom: 1.5em; }
     .coming-soon { color: #9474f4; }
     h2 { font-size: 1.5em; font-weight: bold; color: #9474f4; margin: 1em 0 0.5em; }
