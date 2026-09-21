@@ -5,41 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
   <title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
+  <script>
+    (function() {
+      try {
+        if (localStorage.getItem('theme') === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <style>
+    :root {
+      --color-bg: #242428;
+      --color-text: #e8e8e8;
+      --color-accent: #9474f4;
+      --color-muted: #aaaaaa;
+      --color-code-bg: #2a2a2a;
+    }
+    :root[data-theme="light"] {
+      --color-bg: #fafafa;
+      --color-text: #1a1a1a;
+      --color-accent: #6b4fd6;
+      --color-muted: #666666;
+      --color-code-bg: #ececec;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 18px; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; color: #e8e8e8; background-color: #242428; line-height: 1.8; padding: 2em; max-width: 900px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
-    a { color: #9474f4; text-decoration: none; }
-    a:visited { color: #9474f4; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif; color: var(--color-text); background-color: var(--color-bg); line-height: 1.8; padding: 2em; max-width: 900px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+    a { color: var(--color-accent); text-decoration: none; }
+    a:visited { color: var(--color-accent); }
     a:hover { text-decoration: underline; }
+    .top-nav { display: flex; justify-content: flex-end; align-items: center; gap: 0.5em; font-size: 0.85em; margin-bottom: 0.5em; }
+    .nav-sep { color: var(--color-muted); }
+    .theme-toggle { background: none; border: none; cursor: pointer; font-size: 1em; line-height: 1; padding: 0; color: inherit; }
     h1 { font-size: 3em; font-weight: 700; text-align: center; margin: 0.4em 0 0.2em; font-family: 'Roboto Mono', monospace; }
-    h1 a { color: #9474f4; text-decoration: none; }
-    h1 a:visited { color: #9474f4; }
+    h1 a { color: var(--color-accent); text-decoration: none; }
+    h1 a:visited { color: var(--color-accent); }
     h1 a::after { content: "\2588"; margin-left: 0.1em; animation: blink 1s step-end infinite; }
     @keyframes blink { 50% { opacity: 0; } }
     @media (prefers-reduced-motion: reduce) { h1 a::after { animation: none; } }
-    .site-tagline { text-align: center; color: #aaaaaa; font-size: 0.85em; margin-bottom: 1.5em; }
-    .post-meta { color: #aaaaaa; font-size: 0.85em; margin-bottom: 1em; }
+    .site-tagline { text-align: center; color: var(--color-muted); font-size: 0.85em; margin-bottom: 1.5em; }
+    .post-meta { color: var(--color-muted); font-size: 0.85em; margin-bottom: 1em; }
     .post-list { text-align: center; }
-    .coming-soon { color: #9474f4; }
-    h2 { font-size: 1.5em; font-weight: bold; color: #9474f4; margin: 1em 0 0.5em; }
-    h3 { font-size: 1.1em; font-weight: bold; color: #9474f4; margin: 1.5em 0 0.2em; }
-    p { margin: 0 0 0.8em; color: #e8e8e8; font-size: 1em; line-height: 1.8; }
-    ul, ol { margin: 0 0 1em 2em; padding: 0; font-size: 1em; color: #e8e8e8; line-height: 1.8; }
+    .coming-soon { color: var(--color-accent); }
+    h2 { font-size: 1.5em; font-weight: bold; color: var(--color-accent); margin: 1em 0 0.5em; }
+    h3 { font-size: 1.1em; font-weight: bold; color: var(--color-accent); margin: 1.5em 0 0.2em; }
+    p { margin: 0 0 0.8em; color: var(--color-text); font-size: 1em; line-height: 1.8; }
+    ul, ol { margin: 0 0 1em 2em; padding: 0; font-size: 1em; color: var(--color-text); line-height: 1.8; }
     li { margin-bottom: 0.3em; }
     main { flex: 1; }
-    footer { text-align: center; padding: 2em 0 1em; color: #e8e8e8; font-size: 0.75em; }
-    pre { font-family: 'Courier New', monospace; font-size: 0.875em; background: #2a2a2a; color: #e8e8e8; padding: 1em; overflow-x: auto; margin: 1em 0; }
-    code { font-family: 'Courier New', monospace; font-size: 0.875em; background: #2a2a2a; color: #e8e8e8; padding: 0.1em 0.3em; }
+    footer { text-align: center; padding: 2em 0 1em; color: var(--color-text); font-size: 0.75em; }
+    pre { font-family: 'Courier New', monospace; font-size: 0.875em; background: var(--color-code-bg); color: var(--color-text); padding: 1em; overflow-x: auto; margin: 1em 0; }
+    code { font-family: 'Courier New', monospace; font-size: 0.875em; background: var(--color-code-bg); color: var(--color-text); padding: 0.1em 0.3em; }
     pre code { background: none; padding: 0; }
   </style>
 </head>
 <body>
+<div class="top-nav">
+  <a href="/about/">About</a>
+  <span class="nav-sep">|</span>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark mode">☀</button>
+</div>
 <h1><a href="/">{{ .Site.Title }}</a></h1>
 <p class="site-tagline">Thoughts on software, AI, engineering and the future of work.</p>
 <main>
 {{ block "main" . }}{{ end }}
 </main>
 <footer>© {{ .Site.Params.author }} {{ now.Format "2006" }}</footer>
+<script>
+  (function() {
+    var root = document.documentElement;
+    var btn = document.getElementById('theme-toggle');
+    function sync() {
+      btn.textContent = root.getAttribute('data-theme') === 'light' ? '🌙' : '☀';
+    }
+    sync();
+    btn.addEventListener('click', function() {
+      var goingLight = root.getAttribute('data-theme') !== 'light';
+      if (goingLight) {
+        root.setAttribute('data-theme', 'light');
+      } else {
+        root.removeAttribute('data-theme');
+      }
+      try { localStorage.setItem('theme', goingLight ? 'light' : 'dark'); } catch (e) {}
+      sync();
+    });
+  })();
+</script>
 </body>
 </html>
