@@ -4,7 +4,6 @@
 <div class="post-list">
 <h3>Latest Posts</h3>
 {{ range $postsByYear }}
-<h3>{{ .Key }}</h3>
 {{ range .Pages }}
 <p>{{ if .Params.comingSoon }}<span class="coming-soon">{{ .Title }} - coming soon</span>{{ else }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ with .Params.tagline }} · {{ . }}{{ end }}{{ end }}</p>
 {{ end }}
