@@ -1,4 +1,5 @@
 {{ define "main" }}
 <h1 style="margin-bottom: 1em;">{{ .Title }}</h1>
+{{ if gt .ReadingTime 0 }}<p class="post-meta">{{ .ReadingTime }} {{ if eq .ReadingTime 1 }}min{{ else }}mins{{ end }} read</p>{{ end }}
 {{ .Content }}
 {{ end }}
