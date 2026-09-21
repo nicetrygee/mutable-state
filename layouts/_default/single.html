@@ -1,5 +1,6 @@
 {{ define "main" }}
 <h1 style="margin-bottom: 1em;">{{ .Title }}</h1>
+{{ with .Params.photo }}<img class="about-photo" src="{{ . | relURL }}" alt="{{ $.Params.photoAlt | default $.Site.Params.author }}">{{ end }}
 {{ if gt .ReadingTime 0 }}<p class="post-meta">{{ .ReadingTime }} {{ if eq .ReadingTime 1 }}min{{ else }}mins{{ end }} read</p>{{ end }}
 {{ .Content }}
 {{ end }}
