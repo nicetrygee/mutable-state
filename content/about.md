@@ -1,6 +1,8 @@
 ---
 title: "About"
 date: 2026-09-21
+photo: "images/profile.jpg"
+photoAlt: "Gregg Roseker"
 ---
 
 Hi, I'm Gregg! I'm a Software Engineering Manager who likes building useful things, fixing broken things, and sometimes I write about it here.
