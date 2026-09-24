@@ -1,7 +1,7 @@
 ---
 title: "A Day of Spec-Driven Development with Spec-Kit"
 date: 2026-09-24
-draft: true
+draft: false
 ---
 
 Earlier this week I was at AI Camp's Sydney meetup about Forward Deployed Engineering. I was discussing spec-driven development with an engineer I met and he recommended that I check out Spec-Kit. This is GitHub's free, open-source toolkit for spec-driven development and it's reasonably mature....for an SDD framework. So I spent a day trying it out, and this post is about what I learned.
@@ -57,9 +57,6 @@ It was complete overkill. The whole story was only six small edits, and setting 
 ## Where I was still needed
 
 My contributions were choosing the clarification option, reading a licence and deciding what it meant, deciding a dirty working tree should be thrown away, deciding whether parallel agents were worth trying, holding a phone with VoiceOver on and the text at its largest size, and choosing when to merge. None of that is writing code. All of it is judgement about the world outside the repository, or about risk.
-
-[SCREENSHOT: The iPhone in flight mode showing saved weather with "Couldn't get newer weather. Showing saved weather from …"]
-Caption: Offline fallback on a real phone. The one check no agent could do for me.
 
 ## What changed
 
