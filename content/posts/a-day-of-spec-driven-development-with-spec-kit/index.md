@@ -56,7 +56,7 @@ It was complete overkill. The whole story was only six small edits, and setting 
 
 ## Where I was still needed
 
-My contributions were choosing the clarification option, reading a licence and deciding what it meant, deciding whether parallel agents were worth trying, holding a phone with VoiceOver on and the text at its largest size, and choosing when to merge. None of that is writing code. All of it is judgement about the world outside the repository, or about risk.
+My contributions were choosing the clarification option, reading a licence and deciding what it meant, deciding a dirty working tree should be thrown away, deciding whether parallel agents were worth trying, holding a phone with VoiceOver on and the text at its largest size, and choosing when to merge. None of that is writing code. All of it is judgement about the world outside the repository, or about risk.
 
 [SCREENSHOT: The iPhone in flight mode showing saved weather with "Couldn't get newer weather. Showing saved weather from …"]
 Caption: Offline fallback on a real phone. The one check no agent could do for me.
@@ -65,6 +65,6 @@ Caption: Offline fallback on a real phone. The one check no agent could do for m
 
 The interesting shift was where the conversation happened. Without SDD I talk to an agent about code and with SDD, I mostly talked to the agent about the md documents, and the documents told the agent about the code. They were the interface between us, between sessions and between agents.
 
-That moves the human's job towards two things: writing constraints clearly enough that an agent can hold itself to them, and noticing when reality has drifted from what's written down. The agent was good at spotting drift. It flagged the version mismatches and the unworkable test step but it couldn't decide what any of them meant.
+That moves the human's job towards two things: writing constraints clearly enough that an agent can hold itself to them, and noticing when reality has drifted from what's written down. The agent was good at spotting drift. It flagged the version mismatches, the unworkable test step and the stray downgrade but it couldn't decide what any of them meant.
 
 This was one small app, built by me in a day but it's really solidified my understanding of the constitution and the spec. They aren't paperwork for the agent. They're the part of the system I'm responsible for, which is familiar territory for an Engineering Manager / Technical Delivery Manager because most of the job is writing down what's been agreed and noticing when the world has moved on from it.
