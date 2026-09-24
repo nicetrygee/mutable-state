@@ -52,7 +52,7 @@ For the third user story I ran three agents in parallel, each in its own Warp pa
 
 ![git log --graph showing the three us3 branches merging into 001-place-search-weather](git-log-graph.png "Three branches, one merge, no conflicts.")
 
-It was complete overkill. The whole story was only six small edits, and setting up worktrees, installing dependencies three times and writing three prompts cost about what running them one sequentially would have. The biggest takeaway from this is the reason it was possible at all. The coordination was already in the documents before anyone thought about parallelism.
+It was complete overkill. The whole story was only six small edits, and setting up worktrees, installing dependencies three times and writing three prompts cost about what running them sequentially would have. The biggest takeaway from this is the reason it was possible at all. The coordination was already in the documents before anyone thought about parallelism.
 
 ## Where I was still needed
 
