@@ -12,15 +12,13 @@ The setup was deliberately unambitious. I installed GitHub's Spec-Kit, drove Cla
 
 Spec-Kit starts with a constitution, a set of project-wide principles that every later step is checked against. Mine has ten, each with a priority tier: privacy by design, trustworthy when things go wrong, accessible to everyone, simple over clever, tested before shipped and so on. It was already at version 1.3 by my first commit. The 1.3 change added the principle I'd recommend to anyone trying this: the agent must explain every non-obvious technical decision in plain language in the plan.
 
-[SCREENSHOT: The "Core Principles" section of .specify/memory/constitution.md, showing the priority tiers and principle X, Explainability]
-Caption: Ten principles, each with a tier. Explainability was added in version 1.3, before any code existed.
+![The Core Principles section of the constitution, showing the priority tiers](core-principles.png "Ten principles, each with a tier. Explainability was added in version 1.3, before any code existed.")
 
 From there the steps were specify, clarify, plan, tasks and implement. The first feature's spec ran to 24 functional requirements and seven measurable success criteria. The spec left one question open for me, whether the app should reopen on the last place viewed, and I chose to start on search with a "Last viewed" shortcut instead. Planning did real research, including live calls to the Open-Meteo API, and produced thirteen explained decisions covering things like why there's no navigation library and why the age of the data comes from the provider's timestamp rather than when the phone downloaded it.
 
 Research also found something I hadn't considered. Open-Meteo is free for non-commercial use, which suits a free, ad-free app and stops suiting it the moment someone adds adverts. I read the terms, confirmed the interpretation and amended the constitution to 1.4, so attribution, caching and "no ads" became binding rules rather than things I'd have to remember. This is the part of SDD I liked most. A fact discovered once becomes a constraint every later session is checked against.
 
-[SCREENSHOT: git show b4a8706, the constitution diff from 1.3.0 to 1.4.0 adding "Current weather provider terms (Open-Meteo)"]
-Caption: A licence condition found during research, turned into a constitutional rule before any code was written.
+![git show b4a8706: the constitution diff from 1.3.0 to 1.4.0 adding the Open-Meteo terms](constitution-v1-4-diff.png "A licence condition found during research, turned into a constitutional rule before any code was written.")
 
 Tasks turned the feature into 58 items across six phases, with the failing test written before each piece of code and a commit at the end of every phase. The first user story was committed by lunchtime. The afternoon covered offline fallback, unusual searches, an accessibility and security pass and a manual check on my iPhone, and the feature was merged the same day with 186 passing tests.
 
@@ -28,12 +26,13 @@ Tasks turned the feature into 58 items across six phases, with the failing test 
 
 The documents did the job of memory. When I opened a new session and typed "let's pick up where we left off", the agent didn't need a recap. It read the checkboxes in tasks.md, saw the first user story was finished and started on the next task. Everything it needed for the second story, down to the exact wording of the error messages, was already written down.
 
-[SCREENSHOT: The Claude Code session in Warp responding to "let's pick up where we left off" by listing completed tasks and starting Phase 4]
-Caption: The whole handover was a checklist in a markdown file.
+![Handover summary in Warp: 32 of 58 tasks done, next up Phase 4](handover-checklist.png "The whole handover was a checklist in a markdown file.")
 
 Tests-first held up as a contract. Each task named the test to write, with specific inputs and expected outputs, so "done" was decided by the test suite rather than by the agent's opinion of its own work.
 
 The explainability principle paid for itself. The plan reads like a design document a new starter could follow, with the rejected alternatives and trade-offs for each decision. I could review the agent's reasoning before any of it had become code, which is a lot cheaper than reviewing it afterwards.
+
+![Principle X, Explainability, in full](explainability-principle.png "Principle X in full, including what counts as a non-obvious decision.")
 
 ## What didn't
 
@@ -41,18 +40,15 @@ The documentation is heavy for something this size. The constitution and feature
 
 The specs were also confidently wrong in places, and always about the outside world. The plan named a React Native version the Expo template doesn't ship. It didn't foresee that the app needed a library to keep content clear of the iPhone notch, so a new decision was added mid-build with a note admitting it. One task told the agent to expect version 3 of a storage library and not assume version 2; Expo installed 2.2.0. The manual test plan asked me to reopen the app in flight mode, which can't work in Expo Go because it loads the app over Wi-Fi from your computer. The spec was consistent with itself. It just hadn't met a real phone yet.
 
-[SCREENSHOT: plan.md decision D13, with the note "Added during implementation (T031). The plan did not anticipate this need."]
-Caption: The plan recording its own gap instead of quietly changing.
+![Decision D13 in plan.md, marked as added during implementation](plan-decision-d13.png "The plan recording its own gap instead of quietly changing.")
 
 ## Three agents at once
 
 For the third user story I ran three agents in parallel, each in its own Warp pane and git worktree. The split was easy because tasks.md already recorded which tasks touched which files. Each agent got one test-and-code pair, a list of files it could edit and two rules: don't touch tasks.md, and don't start the Expo dev server. All three committed within a minute of each other and the merge had no conflicts.
 
-[SCREENSHOT: Warp split into three panes, one Claude Code agent per worktree, each working on its own US3 task pair]
-Caption: Three agents that never knew about each other, coordinated through one text file and three prompts.
+![Warp split into three panes, one Claude Code agent per worktree, each reporting its finished task pair](warp-three-agents.png "Three agents that never knew about each other, coordinated through one text file and three prompts.")
 
-[SCREENSHOT: git log --graph --oneline showing the three us3-* branches merging into 001-place-search-weather]
-Caption: Three branches, one merge, no conflicts.
+![git log --graph showing the three us3 branches merging into 001-place-search-weather](git-log-graph.png "Three branches, one merge, no conflicts.")
 
 It worked, and it wasn't worth it. The whole story was about six small edits, and setting up worktrees, installing dependencies three times and writing three prompts cost about what running them one after another would have. What I'd keep is the reason it was possible at all. The coordination was already in the documents before anyone thought about parallelism.
 
