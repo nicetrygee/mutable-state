@@ -1,5 +1,5 @@
 ---
-title: "The Documents Were the Interface"
+title: "A Day of Spec-Driven Development with Spec-Kit"
 date: 2026-09-24
 draft: true
 ---
