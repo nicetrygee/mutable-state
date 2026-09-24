@@ -32,7 +32,7 @@ The documents did the job of memory. When I opened a new Claude session and type
 
 Tests-first held up as a contract. Each task named the test to write, with specific inputs and expected outputs, so 'done' was decided by the test suite. The agent wrote the test, ran it, wrote the code and ran the test again. It didn't have to guess what 'done' meant, and I didn't have to guess whether it had done it. 
 
-The explainability principle paid for itself. The plan reads like a design document a new joiner could follow, with the rejected alternatives and trade-offs for each decision. I could review the agent's reasoning before any of it had become code, which is a lot cheaper than reviewing it afterwards.
+The explainability principle is worth the investment because it means the plan reads like a design document a new joiner could follow, including the rejected alternatives and trade-offs for each decision. I could review the agent's reasoning before any of it had become code, which is a lot less stressful than reviewing it afterwards.
 
 ![Principle X, Explainability, in full](explainability-principle.png "Principle X in full, including what counts as a non-obvious decision.")
 
@@ -44,7 +44,7 @@ The specs were also confidently wrong in places, and always about the outside wo
 
 ![Decision D13 in plan.md, marked as added during implementation](plan-decision-d13.png "The plan recording its own gap instead of quietly changing.")
 
-## Three agents at once
+## Three agents at once never grows old
 
 For the third user story I ran three agents in parallel, each in its own Warp pane and git worktree. The split was easy because tasks.md already recorded which tasks touched which files. Each agent got one test-and-code pair, a list of files it could edit and two rules: don't touch tasks.md, and don't start the Expo dev server. All three committed within a minute of each other and the merge had no conflicts.
 
