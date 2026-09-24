@@ -24,6 +24,8 @@ Research also found something I hadn't considered. Shame on me. Open-Meteo is fr
 
 The Tasks step turned the feature into 58 items across six phases, with the failing test written before each piece of code and a commit at the end of every phase. The first user story was committed by lunchtime and then the afternoon covered offline fallback, unusual searches, an accessibility and security pass and a manual check on my iPhone, and the feature was merged the same day with 186 passing tests.
 
+![The weather app running on an iPhone in Expo Go](iphone-screenshot.png "The finished feature on a real phone, where the spec finally met the outside world.")
+
 ## What worked
 
 The documents did the job of memory. When I opened a new Claude session and typed 'let's pick up where we left off', the agent didn't need a recap. It read the checkboxes in tasks.md, saw the first user story was finished and started on the next task. Everything it needed for the second story, down to the exact wording of the error messages, was already written down.
