@@ -8,16 +8,19 @@
 */ -}}
 {{- $u := urls.Parse .Destination -}}
 {{- $src := $u.String -}}
+{{- $class := "" -}}
 {{- if not $u.IsAbs -}}
   {{- with .PageInner.Resources.Get $u.Path -}}
     {{- $src = .RelPermalink -}}
+    {{- /* Portrait images (phone screenshots) get a narrower cap in baseof.html */ -}}
+    {{- if gt .Height .Width }}{{ $class = "portrait" }}{{ end -}}
   {{- else -}}
     {{- errorf "%s: image %q not found. Put it in the post's folder next to index.md (see CLAUDE.md)." $.PageInner.File.Path $u.Path -}}
   {{- end -}}
 {{- end -}}
 {{- if .IsBlock -}}
 <figure>
-  <img src="{{ $src }}" alt="{{ .PlainText }}" loading="lazy">
+  <img src="{{ $src }}" alt="{{ .PlainText }}"{{ with $class }} class="{{ . }}"{{ end }} loading="lazy">
   {{- with .Title }}
   <figcaption>{{ . }}</figcaption>
   {{- end }}
