@@ -1,0 +1,27 @@
+{{- /*
+  Renders every Markdown image: ![alt text](file.png "Optional caption")
+
+  Local images must sit next to the post's index.md (a page bundle). They're
+  looked up as page resources, so the /mutable-state/ prefix is always right,
+  and a missing file fails the build instead of shipping a broken image.
+  An image on its own line becomes a <figure>; the title becomes the caption.
+*/ -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $src := $u.String -}}
+{{- if not $u.IsAbs -}}
+  {{- with .PageInner.Resources.Get $u.Path -}}
+    {{- $src = .RelPermalink -}}
+  {{- else -}}
+    {{- errorf "%s: image %q not found. Put it in the post's folder next to index.md (see CLAUDE.md)." $.PageInner.File.Path $u.Path -}}
+  {{- end -}}
+{{- end -}}
+{{- if .IsBlock -}}
+<figure>
+  <img src="{{ $src }}" alt="{{ .PlainText }}" loading="lazy">
+  {{- with .Title }}
+  <figcaption>{{ . }}</figcaption>
+  {{- end }}
+</figure>
+{{- else -}}
+<img src="{{ $src }}" alt="{{ .PlainText }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy">
+{{- end -}}

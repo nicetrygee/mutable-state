@@ -8,3 +8,7 @@ title = "mutable state"
 
 [permalinks]
   posts = "/:slug/"
+
+# An image on its own line renders as a <figure> (see layouts/_default/_markup/render-image.html)
+[markup.goldmark.parser]
+  wrapStandAloneImageWithinParagraph = false
