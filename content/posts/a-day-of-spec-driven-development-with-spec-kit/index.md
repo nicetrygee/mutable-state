@@ -16,23 +16,22 @@ Spec-Kit starts with a constitution.md, a set of project-wide principles that ev
 
 ![The Core Principles section of the constitution, showing the priority tiers](core-principles.png "Ten principles, each with a tier. Explainability was added in version 1.3, before any code existed.")
 
-From there the steps were **Specify**, **Clarify**, **Plan**, **Tasks** and **Implement**. 
+From there the steps were **Specify**, **Clarify**, **Plan**, **Tasks** and **Implement**.
 
 ### Specify (/speckit.specify)
 You describe what you want to build and why, and the agent turns that into spec.md which includes user stories, functional requirements, acceptance criteria and edge cases and it stays deliberately free of tech choices. Anything ambiguous gets marked [NEEDS CLARIFICATION] so it isn't guessed at.
 
-Clarify (/speckit.clarify)
+### Clarify (/speckit.clarify)
 The agent reviews the spec for gaps and asks you a short set of targeted questions. In my case, it asked me six, and they were multiple choice. Your answers then go back into the spec and the point is to resolve ambiguity before it becomes an architectural decision that slips under your radar.
 
 ### Plan (/speckit.plan)
 This is where the 'how' comes in. You give it your tech stack and constraints, and it produces plan.md plus supporting files including research notes, a data model, API contracts and a quickstart. It also checks the plan against your constitution.md, which holds your non-negotiable principles, and flags anything that breaks them.
 
-Tasks (/speckit.tasks)
-The plan gets broken into tasks.md which isan ordered, dependency-aware list of small, testable work items. They're grouped by user story, and [P] marks tasks that can run in parallel. It's effectively the sprint backlog written so an agent can pick up one task at a time.
+### Tasks (/speckit.tasks)
+The plan gets broken into tasks.md which is an ordered, dependency-aware list of small, testable work items. They're grouped by user story, and [P] marks tasks that can run in parallel. It's effectively the sprint backlog written so an agent can pick up one task at a time.
 
 ### Implement (/speckit.implement)
 The agent works through tasks.md in order, following the dependencies and running tests as it goes. It ticks tasks off and stops at checkpoints so you can review each chunk instead of getting one big dump of code.
-
 
 The first feature's spec ran to 24 functional requirements and seven measurable success criteria. The spec came out of an interview where Claude asked me about the app's purpose, its users, likely future scenarios and how I wanted it to fail. For example, should the app reopen on the last place viewed? I decided it should open on search instead, with a 'Last viewed' shortcut. The Planning step also did actual research, including live calls to the Open-Meteo API, and produced thirteen explained decisions covering things like why there's no navigation library and why the age of the data comes from the provider's timestamp rather than when the phone downloaded it.
 
