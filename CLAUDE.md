@@ -26,5 +26,6 @@ There is no test suite, linter, or package manager — Hugo is the only dependen
   - `index.html` — homepage; groups posts by year (`GroupByDate "2006"`) via `{{ define "main" }}`.
   - `_default/single.html` — individual post rendering.
   - Changing site-wide look and feel (colors, fonts, spacing) means editing the `<style>` block in `baseof.html` directly.
+- **Analytics**: GoatCounter (cookieless). The site code is `goatcounter` under `[params]` in `hugo.toml`; `baseof.html` adds the script only when `hugo.IsProduction`, so `hugo server` visits aren't counted. Dashboard: https://nicetrygree.goatcounter.com
 - **Deploy**: `.github/workflows/deploy.yml` builds with `hugo --minify` and publishes to GitHub Pages on every push to `main` (via `actions/deploy-pages`). Pushing to `main` deploys — there's no separate release step.
 - `public/` is the Hugo build output and is gitignored; don't hand-edit it.

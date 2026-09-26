@@ -19,6 +19,10 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
+  {{- /* Visit counts at https://<code>.goatcounter.com; production builds only, so `hugo server` previews aren't counted */}}
+  {{- with site.Params.goatcounter }}{{ if hugo.IsProduction }}
+  <script data-goatcounter="https://{{ . }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  {{- end }}{{ end }}
   <script>
     (function() {
       try {
