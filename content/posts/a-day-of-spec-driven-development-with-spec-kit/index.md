@@ -33,6 +33,10 @@ The plan gets broken into tasks.md which is an ordered, dependency-aware list of
 ### Implement (/speckit.implement)
 The agent works through tasks.md in order, following the dependencies and running tests as it goes. It ticks tasks off and stops at checkpoints so you can review each chunk instead of getting one big dump of code.
 
+![Diagram of the Spec-Kit phases: Specify and Clarify pin down intent, Plan decides design, Tasks orders the work, Implement executes, with spec.md, plan.md and tasks.md handed between them, learnings feeding back into the next spec, and constitution.md constraining every cycle](spec-kit-handoff.png "How the phases hand off, with constitution.md constraining every cycle.")
+
+## Anyway, back to the workflow, as it happened
+
 The first feature's spec ran to 24 functional requirements and seven measurable success criteria. The spec came out of an interview where Claude asked me about the app's purpose, its users, likely future scenarios and how I wanted it to fail. For example, should the app reopen on the last place viewed? I decided it should open on search instead, with a 'Last viewed' shortcut. The Planning step also did actual research, including live calls to the Open-Meteo API, and produced thirteen explained decisions covering things like why there's no navigation library and why the age of the data comes from the provider's timestamp rather than when the phone downloaded it.
 
 Research also found something I hadn't considered. Shame on me. Open-Meteo is free for non-commercial use, which suits a free, ad-free app but stops suiting it the moment I add adverts. I read the terms, confirmed the interpretation and amended the constitution to 1.4, so attribution, caching and 'no ads' became binding rules in memory. More importantly, not my memory! This is the part of SDD I like most. A fact discovered once becomes a constraint that every later session is checked against.
