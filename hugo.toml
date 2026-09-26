@@ -5,6 +5,7 @@ title = "mutable state"
 [params]
   author = "mutable state"
   description = "Engineering, management, and the space between."
+  goatcounter = "nicetrygree"   # visit analytics: https://nicetrygree.goatcounter.com
 
 [permalinks]
   posts = "/:slug/"
