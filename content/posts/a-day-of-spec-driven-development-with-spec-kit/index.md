@@ -10,6 +10,9 @@ I've spent years telling teams that knowledge in someone's head doesn't count un
 
 My dev setup was deliberately modest: the Spec-Kit CLI, Claude Code as my harness, and Warp as my terminal. The goal was a weather app for Australian locations that could find a suburb, show its current conditions, and behave sensibly when the network doesn't. I accept that nobody needs another weather app but I wanted to know what Spec-Kit feels like with tools I already use, and a small, boring product is a good way of keeping my attention on the process.
 
+## Don't Grill Me
+I should also point out that I chose not to use Matt Pocock's /grill-me skill because I wanted to see the results I could get with just the Spec-Kit CLI. The key difference is that with Spec-Kit the agent answers and you judge. In /grill-me you answer and the agent judges. In hindsight, I would have been better off using both. I would have used Grill Me before writing the constitution to further refine my idea, and maybe I would have swapped it out /speckit.clarify for /grill-me to get a more probing set of questions.
+
 ## The workflow, as it happened
 
 Spec-Kit starts with a constitution.md, a set of project-wide principles that every later step is checked against. Mine has ten, each with a priority tier: privacy by design, trustworthy when things go wrong, accessible to everyone, simple over clever, tested before shipped and so on. It was already at version 1.3 by my first commit and the 1.3 change added the principle I'd recommend to anyone trying this, especially if they aren't technical: the agent must explain every non-obvious technical decision in plain language in the plan.
