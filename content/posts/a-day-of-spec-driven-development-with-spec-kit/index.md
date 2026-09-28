@@ -10,8 +10,8 @@ I've spent years telling teams that knowledge in someone's head doesn't count un
 
 My dev setup was deliberately modest: the Spec-Kit CLI, Claude Code as my harness, and Warp as my terminal. The goal was a weather app for Australian locations that could find a suburb, show its current conditions, and behave sensibly when the network doesn't. I accept that nobody needs another weather app but I wanted to know what Spec-Kit feels like with tools I already use, and a small, boring product is a good way of keeping my attention on the process.
 
-## Don't Grill Me
-I should also point out that I chose not to use Matt Pocock's /grill-me skill because I wanted to see the results I could get with just the Spec-Kit CLI. The key difference is that with Spec-Kit the agent answers and you judge. In /grill-me you answer and the agent judges. In hindsight, I would have been better off using both. I would have used Grill Me before writing the constitution to further refine my idea, and maybe I would have swapped it out /speckit.clarify for /grill-me to get a more probing set of questions.
+## Please don't /grill-me
+I should also point out that I chose not to use Matt Pocock's /grill-me skill because I wanted to see the results I could get with just the Spec-Kit CLI. The key difference is that with Spec-Kit the agent answers and you judge. In /grill-me you answer and the agent judges. In hindsight, I would have been better off using both. I would have used /grill-me before writing the constitution to further refine my idea, and maybe I would have swapped it out /speckit.clarify for /grill-me to get a more probing set of questions.
 
 ## The workflow, as it happened
 
@@ -19,7 +19,7 @@ Spec-Kit starts with a constitution.md, a set of project-wide principles that ev
 
 ![The Core Principles section of the constitution, showing the priority tiers](core-principles.png "Ten principles, each with a tier. Explainability was added in version 1.3, before any code existed.")
 
-From there the steps were **Specify**, **Clarify**, **Plan**, **Tasks** and **Implement**.
+From there the steps were **Specify**, **Clarify**, **Plan**, **Tasks** and **Implement**. Let's briefly look at what each step does.
 
 ### Specify (/speckit.specify)
 You describe what you want to build and why, and the agent turns that into spec.md which includes user stories, functional requirements, acceptance criteria and edge cases and it stays deliberately free of tech choices. Anything ambiguous gets marked [NEEDS CLARIFICATION] so it isn't guessed at.
@@ -38,11 +38,11 @@ The agent works through tasks.md in order, following the dependencies and runnin
 
 ![Diagram of the Spec-Kit phases: Specify and Clarify pin down intent, Plan decides design, Tasks orders the work, Implement executes, with spec.md, plan.md and tasks.md handed between them, learnings feeding back into the next spec, and constitution.md constraining every cycle](spec-kit-handoff.png "How the phases hand off, with constitution.md constraining every cycle.")
 
-## Anyway, back to the workflow, as it happened
+## Back to the workflow, as it happened
 
-The first feature's spec ran to 24 functional requirements and seven measurable success criteria. The spec came out of an interview where Claude asked me about the app's purpose, its users, likely future scenarios and how I wanted it to fail. For example, should the app reopen on the last place viewed? I decided it should open on search instead, with a 'Last viewed' shortcut. The Planning step also did actual research, including live calls to the Open-Meteo API, and produced thirteen explained decisions covering things like why there's no navigation library and why the age of the data comes from the provider's timestamp rather than when the phone downloaded it.
+The first feature's spec ran to 24 functional requirements and seven measurable success criteria. The spec was the product of an interview where Claude asked me about the app's purpose, its users, likely future scenarios, how I wanted it to fail, and more. For example, should the app reopen on the last place viewed? I decided it should open on search instead, with a 'Last viewed' shortcut. The Planning step also carried out research, including live calls to the Open-Meteo API, and produced thirteen (explained) decisions covering things like why there's no navigation library and why the age of the data comes from the provider's timestamp rather than when the phone downloaded it.
 
-Research also found something I hadn't considered. Shame on me. Open-Meteo is free for non-commercial use, which suits a free, ad-free app but stops suiting it the moment I add adverts. I read the terms, confirmed the interpretation and amended the constitution to 1.4, so attribution, caching and 'no ads' became binding rules in memory. More importantly, not my memory! This is the part of SDD I like most. A fact discovered once becomes a constraint that every later session is checked against.
+Research also found something I hadn't considered. Yes, shame on me. Open-Meteo is free for non-commercial use, which works for a free, ad-free app like mine but stops being a good fit the moment I decide I want the app to start turning a buck and incorporate adverts. So I read the terms, confirmed the interpretation and amended the constitution to 1.4, so attribution, caching and 'no ads' became binding rules in memory. More importantly, not my memory! This is one of the big value-adds of SDD. A fact discovered once becomes a constraint that every later session is checked against.
 
 ![git show b4a8706: the constitution diff from 1.3.0 to 1.4.0 adding the Open-Meteo terms](constitution-v1-4-diff.png "A licence condition found during research, turned into a constitutional rule before any code was written.")
 
@@ -58,15 +58,15 @@ The Markdown documents did their job of acting as the memory. When I opened a ne
 
 Tests-first held up as a contract. Each task named the test to write, with specific inputs and expected outputs, so 'done' was decided by the test suite. The agent wrote the test, ran it, wrote the code and ran the test again. Nice.
 
-The explainability principle was worth the investment because it means the plan reads like a design document a new joiner could follow, including the rejected alternatives and trade-offs for each decision. This way I could review the agent's reasoning before any of it had become code, which is a lot less stressful than reviewing it afterwards.
+The explainability principle demonstrated its by allowing the plan to read like a design doc anyone can follow, including the rejected alternatives and trade-offs for each decision. For me personally, I used it to review the agent's reasoning before any of it had become code, which is a lot less stressful than reviewing it afterwards.
 
 ![Principle X, Explainability, in full](explainability-principle.png "Principle X in full, including what counts as a non-obvious decision.")
 
 ## What didn't work
 
-The amount of documentation is heeeaavvvyyy for a project of this size. The constitution and feature documents come to about 1,400 lines. The app is about 1,000 lines of code and 1,000 lines of tests!! That's more writing about the thing than the thing. Most of it is decisions I'd otherwise carry in my head, so I don't think it was wasted, but the ratio would have to come down for SDD to pay its way on small changes and that's perfectly doable.
+The amount of documentation feels heavy for a project of this size. The constitution and feature documents come to ~1,400 lines after only the first feature. On the positive side, it's mostly a one-off cost. The first feature carries decisions for the whole project: stack, architecture, data source, constraints. Later features reuse them, so the documentation per feature should fall. For example, the 266-line constitution applies to every future feature. It's also context for the agent. Future features will get planned against explicit intent instead of guesses from the code.
 
-The specs were also confidently wrong in places, and always about the outside world. The plan named a React Native version the Expo template doesn't ship. It didn't foresee that the app needed a library to keep content clear of the iPhone notch, so a new decision was added mid-build with a note admitting it. One task told the agent to expect version 3 of a storage library and not assume version 2; Expo installed 2.2.0. The manual test plan asked me to reopen the app in flight mode, which can't work in Expo Go because it loads the app over Wi-Fi from your local machine. The spec was consistent with itself but I guess it just hadn't met a real iPhone 17 Pro yet. Mike Tyson said everyone has a plan until they get punched in the mouth. My spec had a plan until it met an iPhone.
+The specs were also confidently wrong in places, and always about the outside world. The plan named a React Native version the Expo template doesn't ship. It didn't foresee that the app needed a library to keep content clear of the iPhone notch, so a new decision was added mid-build with a note admitting it. One task told the agent to expect version 3 of a storage library and not assume version 2; Expo installed 2.2.0. The manual test plan asked me to reopen the app in flight mode, which can't work in Expo Go because it loads the app over Wi-Fi from your local machine. The spec was consistent with itself but I guess it just hadn't met a real iPhone 17 Pro yet. Mike Tyson said everyone has a plan until they get punched in the mouth. My spec had a plan until it met my iPhone.
 
 ![Decision D13 in plan.md, marked as added during implementation](plan-decision-d13.png "The plan recording its own gap instead of quietly changing.")
 
@@ -86,8 +86,15 @@ My contributions were decisions, and not code. I answered the questions Claude a
 
 ## What changed
 
-The interesting shift was where the conversation happened. Without SDD I talk to an agent about code and with SDD, I mostly talked to the agent about the Markdown documents, and the documents told the agent about the code. They were the interface between us, between sessions and between agents.
+The interesting shift was where the conversation happened. Without SDD a person talks to an agent about code and with SDD, a person mostly talks to the agent about the Markdown documents, and the documents tell the agent about the code. They were the interface between us, between sessions and between agents.
 
 That moves the human's job towards two things: writing constraints clearly enough that an agent can hold itself to them, and noticing when reality has drifted from what's written down. The agent was good at spotting drift. It flagged the version mismatches, the unworkable test step and the stray downgrade but it couldn't decide what any of them meant.
 
-This was one small app, built by me in a day but it's really solidified my understanding of the constitution and the spec. They aren't paperwork for the agent. They're the part of the system I'm responsible for, which is familiar territory for an Engineering Manager / Technical Delivery Manager because most of the job is writing down what's been agreed and noticing when the world has moved on from it.
+I've used specs on several commercial projects and this test drive of Spec-Kit reminded yet again that specs aren't paperwork for the agent. They're the part of the system I'm responsible for, which is familiar territory for an Engineering Manager / Technical Delivery Manager because most of the job is writing down what's been agreed and noticing when the world has moved on from it.
+
+## Wrap-up
+
+This was one small app, built by me in a day. On a greenfield project like this you're writing down decisions you made yesterday. On a brownfield project, many of the important decisions were made years ago by people who may have left the company, and the reasons were never recorded. That's where this kind of written-down intent is worth most but the agent can't simply produce it. Yes, it can read the code and describe what the system does and it can probably have an excellent stab at why a timeout is 90 seconds or why a service bypasses the cache, but it can't actually tell you why? That reasoning lives in people's heads, or nowhere. So the spec could come out confident about behaviour and silent or wrong about intent, while looking just as authoritative as my weather app's spec. The clarify step can only ask whoever's in the room, so the real question isn't what the agent knows, it's what the organisation knows and is prepared to write down.
+
+
+
