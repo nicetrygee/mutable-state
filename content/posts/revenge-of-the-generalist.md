@@ -35,4 +35,4 @@ Historically, becoming reasonably competent across product, analysis, design and
 
 
 ## The Human–AI Advantage
-Of course, AI will change the shape of work. Some tasks will disappear and roles will evolve but orgs that simply use AI to reduce headcount miss the bigger opportunity. The real competitive advantage will come from building teams where people and AI work together and where employees can move faster, think bigger, and create more value than ever before.
+Of course, AI will change the shape of work. Some tasks will disappear and roles will evolve but orgs that simply use AI to reduce headcount miss the bigger opportunity. The real competitive advantage will come from building teams where people and AI work together and where employees can move faster, think bigger, and create more value than ever before. Here endeth the rant.
