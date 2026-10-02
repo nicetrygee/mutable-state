@@ -17,7 +17,7 @@ The total is less interesting than where it was spent. I'd assumed the cost of u
 That makes sense once you think about what an agent is doing. A model doesn't remember anything between turns. Every time a coding agent reads a file, runs a test or takes another step, the whole conversation goes back to the model: the instructions, the code it has read so far, and everything that has happened since. Caching makes each of those re-reads cheap, but an agent does it constantly and the volume adds up. Most of the cost of agentic coding is re-reading context. With a flat subscription, Anthropic sets the price expecting a typical subscriber to re-read a certain amount. If you re-read less than that, Anthropic comes out ahead. If you re-read more, and I seem to, you come out ahead.
 
 ## Habits that make the biggest difference
-How could I have worked smarter you ask? The answer is to change the way I work so that I re-read less. That means:
+How could I have worked smarter you ask? Re-read less, and that means:
 
  - Start fresh between tasks. Use /clear when you switch to something unrelated. Otherwise every turn of the new task re-reads the old one.
  - Compact or restart at natural breaks. Once a plan is settled, start a new session from the plan or spec rather than carrying the whole discussion forward. This fits how I already work with Spec-Kit. 
