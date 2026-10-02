@@ -37,5 +37,3 @@ Does this mean companies have the same problem but on a bigger scale? Well, most
 
 ## Same workload, cheaper backend?
 That changes the question I want to answer. Pro isn't overpriced for the way I work, so another month comparing the same models on a different billing plan would teach me nothing. The more useful question is whether I can get the same performance from cheaper models, which would also give me the fallback I don't have. So for my next experiment I need to point OpenCode at models available through OpenRouter, give them the same kind of work, and see whether the quality holds when the context costs a fraction of the price.
-
-The first lesson was cheaper than I expected: before designing an experiment, check whether you're already collecting the data that answers it. I was, and it took me one command to find out.
