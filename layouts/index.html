@@ -2,7 +2,7 @@
 {{ $posts := where .Site.RegularPages "Type" "posts" }}
 {{ $postsByYear := $posts.GroupByDate "2006" }}
 <div class="post-list">
-<h3>Latest Posts</h3>
+<h3>latest posts</h3>
 {{ range $postsByYear }}
 {{ range .Pages }}
 <p>{{ if .Params.comingSoon }}<span class="coming-soon">{{ .Title }} - coming soon</span>{{ else }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ with .Params.tagline }} · {{ . }}{{ end }}{{ end }}</p>
