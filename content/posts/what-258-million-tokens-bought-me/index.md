@@ -20,17 +20,17 @@ That makes sense once you think about what an agent is doing. A model doesn't re
 How could I have worked smarter you ask? Re-read less, and that means:
 
  - **Start fresh between tasks.** I should have used /clear when switching to something unrelated. Otherwise every turn of the new task re-reads the old one.
- - **Compact or restart at natural breaks.** Once a plan is settled, I should be starting a new session from the plan or spec rather than carrying the whole discussion forward. This actually fits how I already work with Spec-Kit. 
+ - **Compact or restart at natural breaks.** Once a plan is settled, I should be starting a new session from the plan or spec rather than carrying the whole discussion forward. This actually fits how I already work with Spec Kit. 
  - **Keep the fixed overhead small.** CLAUDE.md, the system prompt and the tool definitions for every connected MCP server go out with every turn. Trim CLAUDE.md and turn off MCP servers I'm not using in that project.
  - **Point it at the right files.** "Fix the null check in parser.py" costs far less than "find the bug". Exploring the codebase fills the context with files it reads once and then re-reads on every later turn.
  - **Keep noisy output out.** Large test logs, stack traces and build output stay in the context once they're in. Ask for tail, grep or a summary instead goddamit.
  - **Use subagents for exploration.** A subagent reads in its own context and only sends back a summary, so the main session doesn't carry everything it read.
- - **Match the model to the task.** Opus costs more per token than Sonnet. Use Opus for design and hard debugging and Sonnet for routine edits.
+ - **Match the model to the task.** Cache reads on Opus cost more than on Sonnet. Use Opus for design and hard debugging and Sonnet for routine edits.
  - **Don't leave a session idle mid-task.** The cache expires after a period of inactivity. When you come back, the whole context is written to the cache again, which was part of my 22% on cache writes.
 
 None of this is new to me. I could have written most of that list before I ran the numbers, and I still didn't do any of it. A flat subscription hides the cost, so a session that drifts across three unrelated tasks feels free and nothing prompts you to clear it. Had I been on the API, I'd have learned these lessons the hard way, with a bill at the end of the month, and I suspect they'd have stuck. Knowing good habits counts for very little when nothing makes you pay for ignoring them.
 
-## Who pays for the heavy users 
+## Who pays for the heavy users
 This doesn't mean I'm getting £63 of compute for £18. The API rate is a list price with a margin in it, and not what it costs our friends at Anthropic to serve me. Also, a subscription works like a gym membership: the people who barely use it pay for the people who do. What really bothers me is that the way I work is now built around a flat price that I don't control. If the subscription price changes, and tighter usage limits are probably more likely than higher prices, I don't have any fallback. I'm totally exposed.
 
 Does this mean companies have the same problem on a bigger scale? Yes. This year both GitHub and Anthropic stopped bundling usage into their enterprise seats. The seat now buys access and every token is metered on top at API rates, which is the same pay-as-you-go maths I've been measuring. That moves the cost of a heavy user from the vendor to the employer, and if my numbers hold, what drives the bill is how much context each engineer's way of working gets re-read. Uber reportedly burned through its 2026 AI coding budget in four months, with engineers costing between $500 and $2,000 a month each, and they had to cap spend at $1,500 per engineer per tool.
