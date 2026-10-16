@@ -1,5 +1,7 @@
 ---
 title: "What 258 Million Tokens Bought Me"
+photo: cake.jpg
+photoAlt: "A cake shaped like a woman in sunglasses, surrounded by gold chocolate coins and banknotes"
 date: 2026-10-02
 draft: false
 ---
