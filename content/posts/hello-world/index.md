@@ -1,5 +1,7 @@
 ---
 title: Hello World
+photo: tim-tams.jpg
+photoAlt: "A supermarket shelf stacked floor to ceiling with Tim Tams"
 date: 2026-01-01
 ---
 
