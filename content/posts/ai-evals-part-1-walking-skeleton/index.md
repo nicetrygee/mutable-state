@@ -1,5 +1,5 @@
 ---
-title: "AI Evals Part 1: evals and observability, the walking skeleton"
+title: "A Walking Skeleton for AI Evals"
 slug: "ai-evals-1-building-the-walking-skeleton"
 date: 2026-10-16
 draft: false
