@@ -68,13 +68,13 @@ The first live run scored:
 
 | Field | Accuracy |
 |---|---|
-| item_type | [4/10] |
-| priority | [8/10] |
-| effort_minutes | [10/10] |
-| person | [10/10] |
-| stream | [8/10] |
-| mode | [8/10] |
-| due_date | [5/10] |
+| item_type | 4/10 |
+| priority | 8/10 |
+| effort_minutes | 10/10 |
+| person | 10/10 |
+| stream | 8/10 |
+| mode | 8/10 |
+| due_date | 5/10 |
 
 Then I switched the model off and ran replay, and the scores matched. Finally I deleted one recording to test the safety catch, and replay stopped with a clear message naming the missing flight.
 
@@ -108,15 +108,15 @@ That last row is the trade-off to watch: replay trusts old recordings, so a new 
 ## How much did it cost?
 Building Phase 0 with Claude Code used $7.26 of API-equivalent usage, all in one day, measured with [ccusage](https://github.com/ryoppippi/ccusage). Remember that running it is free because we're using a local model.
 
-|  |  |
+| Measure | Value |
 |---|---|
-| Cost | [$7.26] |
-| Model | [claude-opus-5-5 only] |
-| Total tokens | [13.7M |
-| Cache reads | [13.3M] |
-| Cache writes | [228K] |
-| Output | [115K] |
-| Input (uncached) | [365] |
+| Cost | $7.26 |
+| Model | claude-opus-5-5 only |
+| Total tokens | 13.7M |
+| Cache reads | 13.3M |
+| Cache writes | 288K |
+| Output | 115K |
+| Input (uncached) | 356 |
 
 ## What's next
 
