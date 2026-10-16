@@ -1,5 +1,7 @@
 ---
 title: "Revenge of the Generalist"
+photo: uma.jpg
+photoAlt: "Uma Thurman as the Bride in Kill Bill, driving at night with a katana beside her"
 date: 2026-07-28
 draft: false
 ---
