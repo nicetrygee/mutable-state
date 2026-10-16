@@ -1,5 +1,6 @@
 ---
 title: "AI evals #1: building the walking skeleton"
+slug: "ai-evals-1-building-the-walking-skeleton"
 date: 2026-10-16
 draft: true
 ---
