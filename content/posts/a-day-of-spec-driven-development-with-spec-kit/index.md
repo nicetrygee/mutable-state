@@ -1,5 +1,7 @@
 ---
 title: "A Day of Spec-Driven Development with Spec-Kit"
+photo: warp-panes.jpg
+photoAlt: "Warp split into three panes, each running a Claude Code agent"
 date: 2026-09-24
 draft: false
 ---
