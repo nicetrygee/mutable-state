@@ -1,5 +1,7 @@
 ---
 title: "Setting Up a Hugo Blog from Scratch"
+photo: hugo.png
+photoAlt: "The Hugo logo"
 date: 2026-07-11T14:45:20+10:00
 draft: false
 ---
