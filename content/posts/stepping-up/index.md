@@ -1,6 +1,8 @@
 ---
 title: "Making the Jump to Senior"
 slug: "making-the-jump-to-senior"
+photo: hyperspace.jpg
+photoAlt: "Han Solo and Chewbacca in the Millennium Falcon cockpit as it jumps to hyperspace"
 date: 2026-08-07
 draft: false
 ---
