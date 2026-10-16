@@ -1,6 +1,6 @@
 ---
 title: "AI evals #1: building the walking skeleton"
-date: 2026-08-07
+date: 2026-10-16
 draft: true
 ---
 
@@ -10,7 +10,7 @@ When I started testing the AI features in one of my apps, my first question was 
 
 Most traditional software is built to be deterministic: given the same inputs and the same environment, it gives the same output. When it doesn't, the cause is usually something the test hasn't pinned down yet, like the clock, the network or the order tests run in, and good testers put a lot of craft into pinning those things down. But AI models vary by design. They're built to choose their words with a little randomness thrown in for good measure, and for many questions there's more than one good answer. So the task shifts from removing variation to measuring it, and from checking for *the* right answer to checking for *a* right one.
 
-Aviation offers a useful way to think about this. Yep, I'm an aviation nut!No two flights on the same route are identical: the wind, the weight and the pilot's small corrections all differ, yet a good flight still lands safely at the right airport. An AI model is similar in many respects. Ask it the same thing twice and the answers will land in much the same place, but rarely word for word. There are a few reasons for that:
+Aviation offers a useful way to think about this. Yep, I'm an aviation nut! No two flights on the same route are identical: the wind, the weight and the pilot's small corrections all differ, yet a good flight still lands safely at the right airport. An AI model is similar in many respects. Ask it the same thing twice and the answers will land in much the same place, but rarely word for word. There are a few reasons for that:
 
 - **Sampling.** A model builds an answer one word at a time, picking from a shortlist of likely options. That element of chance is deliberate, and it's why the answers read naturally.
 - **Turning the randomness down narrows the spread.** Settings like *temperature* make the model favour its top choice, and tiny numerical differences in the hardware can still tip a close call the other way.
