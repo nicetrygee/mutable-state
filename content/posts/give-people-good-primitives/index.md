@@ -1,6 +1,8 @@
 ---
 title: "Give People Good Primitives"
 slug: "give-people-good-primitives"
+photo: prefect-dashboard.jpg
+photoAlt: "A Prefect dashboard showing flow runs, task runs and active work pools"
 date: 2026-08-07
 draft: false
 ---
