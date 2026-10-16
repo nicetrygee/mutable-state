@@ -1,5 +1,7 @@
 ---
 title: Judgement as a System Property
+photo: arch-books.jpg
+photoAlt: "A stack of software architecture books, from Enterprise Integration Patterns to The Design of Everyday Things"
 date: 2026-01-22
 ---  
 
