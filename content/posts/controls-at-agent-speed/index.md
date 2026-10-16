@@ -1,6 +1,8 @@
 ---
 title: "Controls At Agent Speed"
 slug: "left-of-the-diff"
+photo: cyber.jpg
+photoAlt: "Miles Dyson standing in the Cyberdyne Systems lab in Terminator 2"
 date: 2026-08-31
 draft: false
 ---
