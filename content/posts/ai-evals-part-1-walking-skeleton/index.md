@@ -1,8 +1,8 @@
 ---
-title: "AI evals #1: building the walking skeleton"
+title: "AI Evals Part 1: evals and observability, the walking skeleton"
 slug: "ai-evals-1-building-the-walking-skeleton"
 date: 2026-10-16
-draft: true
+draft: false
 ---
 
 When I started testing the AI features in one of my apps, my first question was simple: **can I get the same answer twice?** With normal software, you mostly take that for granted.
@@ -60,11 +60,9 @@ Phase 0 came in three pull requests ([spec here](https://github.com/nicetrygee/r
 
 ![Diagram comparing live mode, which calls the model, with replay mode, which reads recorded answers instead](live-vs-replay.png "Live tests the model. Replay tests the code.")
 
-**Live** is flying the route: the model answers each note, and the answers are scored and saved as recordings. **Replay** is the investigators on the ground, running the recorded data back through their analysis in seconds while the aircraft stays in the hangar.
+**Live** is flying the route: the model answers each note, and the answers are scored and saved as recordings. **Replay** is the investigators on the ground, running the recorded data back through their analysis in seconds while the aircraft stays in the hangar. Netflix used the same principle at much bigger scale. In 2023 their engineers described [replay traffic testing](https://netflixtechblog.com/migrating-critical-traffic-at-scale-with-no-downtime-part-1-ba1c7a1c7835): cloning production requests, sending them to the old and new systems, and comparing the responses before switching anyone over.
 
-Netflix used the same principle at much bigger scale. In 2023 their engineers described [replay traffic testing](https://netflixtechblog.com/migrating-critical-traffic-at-scale-with-no-downtime-part-1-ba1c7a1c7835): cloning production requests, sending them to the old and new systems, and comparing the responses before switching anyone over.
-
-The first live run scored:
+## The first live run scores
 
 | Field | Accuracy |
 |---|---|
@@ -76,7 +74,7 @@ The first live run scored:
 | mode | 8/10 |
 | due_date | 5/10 |
 
-Then I switched the model off and ran replay, and the scores matched. Finally I deleted one recording to test the safety catch, and replay stopped with a clear message naming the missing flight.
+I then switched the model off and ran replay, and the scores matched. Finally I deleted one recording to test the safety catch, and replay stopped with a clear message naming the missing flight.
 
 ## A rule of thumb: two modes, two questions
 
@@ -94,15 +92,15 @@ That last row is the trade-off to watch: replay trusts old recordings, so a new 
 
 ## Here's what I learned
 
-**Building the skeleton first was the right call.** The skeleton took a day and taught me more about the design than the plan did.
+ - **Building the skeleton first was the right call.** The skeleton took a day and taught me more about the design than the plan did.
 
-**Fake the clock.** This is standard trick in normal testing too. In our context,Quick Add turns something like "dentist Friday" into a real date. Which date depends on what day it is when you type it. Say today is Friday 16 October: "Friday" might mean today or the 23rd. Write a test expecting 23 October, and it passes this week but fails next week, when "Friday" means the 30th. Nothing broke; the calendar moved. The fix is that each test case says "pretend today is Wednesday 14 October," so "Friday" always means the 16th and the expected answer never goes stale. A bonus is that you can deliberately test tricky cases, like "Friday" typed on a Friday, by just setting the pretend date, rather than waiting for a real Friday to come around.
+ - **Fake the clock.** This is standard trick in normal testing too. Quick Add turns "dentist Friday" into a real date, so the right answer depends on today's date. A test expecting 23 October would pass this week and fail next week. So each test sets its own "today", and the expected answer never goes stale. It also makes tricky cases easy to test, like "Friday" typed on a Friday.
 
-**Record the conditions as well as the answers.** A flight recorder captures the switch positions as well as the altitude. Qwen3 has a "thinking" mode, where it reasons step by step before answering. Quick Add works well without it, so I switched it off with an instruction inside Runway's own prompt. The setting lives in the code and appears in every trace, right next to the answers it affects.
+ - **Record the conditions as well as the answers.** A flight recorder captures the switch positions as well as the altitude. Qwen3 has a "thinking" mode, where it reasons step by step before answering. Quick Add works well without it, so I switched it off with an instruction inside Runway's own prompt. The setting lives in the code and appears in every trace, right next to the answers it affects.
 
-**Choose the aircraft for the route.** DeepSeek's R1 reasoning model is strong on hard problems, and slower and wordier than a quick extraction task needs. Essentially, a long-haul jet for a short hop. It'll be back later as a comparison.
+ - **Choose the aircraft for the route.** DeepSeek's R1 reasoning model is strong on hard problems, and slower and wordier than a quick extraction task needs. Essentially, a long-haul jet for a short hop. It'll be back later as a comparison.
 
-**Keep the investigators independent.** Air accident investigators work separately from the airline and the manufacturer, and the same principle works for agents. The agent that wrote the test cases worked in its own session, from the spec alone, and I approved every expected answer myself.
+ - **Keep the investigators independent.** Air accident investigators work separately from the airline and the manufacturer, and the same principle works for agents. The agent that wrote the test cases worked in its own session, from the spec alone, and I approved every expected answer myself.
 
 
 ## How much did it cost?
