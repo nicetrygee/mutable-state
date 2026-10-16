@@ -1,6 +1,8 @@
 ---
 title: "A Walking Skeleton for AI Evals"
 slug: "ai-evals-1-building-the-walking-skeleton"
+photo: skeleton.jpg
+photoAlt: "A plastic skeleton in sunglasses and a beanie, sitting at a bar table with a menu and a beer"
 date: 2026-10-16
 draft: false
 ---
