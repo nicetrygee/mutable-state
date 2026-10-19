@@ -4,4 +4,9 @@
 {{ with .Params.photo }}{{ $src := . | relURL }}{{ with $.Resources.Get . }}{{ $src = .RelPermalink }}{{ end }}<img class="about-photo" src="{{ $src }}" alt="{{ $.Params.photoAlt | default $.Site.Params.author }}">{{ end }}
 {{ if gt .ReadingTime 0 }}<p class="post-meta">{{ .ReadingTime }} {{ if eq .ReadingTime 1 }}min{{ else }}mins{{ end }} read</p>{{ end }}
 {{ .Content }}
+{{ if eq .Section "posts" }}
+<nav class="post-footer" aria-label="Post navigation">
+  <a href="{{ .Site.Home.RelPermalink }}">← all posts</a>
+</nav>
+{{ end }}
 {{ end }}
