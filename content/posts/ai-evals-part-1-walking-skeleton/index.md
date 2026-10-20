@@ -7,7 +7,7 @@ date: 2026-10-16
 draft: false
 ---
 
-When I started testing the AI features in one of my apps, my first question was simple: **can I get the same answer twice?** With normal software, you mostly take that for granted.
+When I started testing the AI features in one of my apps, my first question was simple: can I get the same answer twice? With normal software, you mostly take that for granted.
 
 ## AI testing vs traditional software testing
 
@@ -27,7 +27,7 @@ That variation makes familiar testing problems harder:
 - **Comparing models fairly.** If you run your test suite once against model A and once against model B, and A scores higher, that might just be A catching a tailwind. One flight each doesn't tell you which aircraft performs better. You need several runs to see a real difference.
 - **Earning users' trust.** People notice when the same request gets a different answer on Tuesday.
 
-With traditional software, repeatability comes built in. With AI features, the model won't give you that, so you have to build it into how you test. Aviation solved a version of this problem decades ago with the **flight recorder**, the "black box" that captures what the aircraft did and the conditions it did it in, so investigators can replay a flight on the ground long after it has landed. This post is about how I'm building the same thing for my app: every call to the model is a flight where every call gets recorded, and my scoring code is the investigator reading the data. I'm really stretching this analogy aren't I? But it works.
+With traditional software, repeatability comes built in. With AI features, the model won't give you that, so you have to build it into how you test. Aviation solved a version of this problem decades ago with the flight recorder, the 'black box' that captures what the aircraft did and the conditions it did it in, so investigators can replay a flight on the ground long after it has landed. This post is about how I'm building the same thing for my app: every call to the model is a flight where every call gets recorded, and my scoring code is the investigator reading the data. I'm really stretching this analogy aren't I? But it works.
 
 ## The idea, and where it came from
 
@@ -37,7 +37,7 @@ You only really understand an architecture once you've run it, so I'm building t
 
 ## The plan
 
-Runway has an AI feature called **Quick Add**. You type a scrappy note like *"chase Lukas about the hiring panel by Friday"* and it fills in a task: the type, priority, effort, who's involved and when it's due. That's going to be the first feature to get a flight recorder. Later phases add three more AI features, each bringing a new kind of risk: one that reads data, one that changes data, and one that holds a conversation.
+Runway has an AI feature called Quick Add. You type a scrappy note like *'chase Lukas about the hiring panel by Friday'* and it fills in a task: the type, priority, effort, who's involved and when it's due. That's going to be the first feature to get a flight recorder. Later phases add three more AI features, each bringing a new kind of risk: one that reads data, one that changes data, and one that holds a conversation.
 
 ![The seven phases of the plan, from Phase 0 (Skeleton) to Phase 5 (Close the loop)](the-plan.png "The plan. Phases 0 to 2 cover most of what I want to learn")
 
@@ -45,14 +45,14 @@ I've also set some ground rules which will shape the whole thing:
 
 - **It's free to run.** Models run locally on my 16GB MacBook Air using [LM Studio](https://lmstudio.ai), with a paid model joining occasionally for comparison.
 - **Everything is traced, and the data is made up.** Every call is logged, and every task, person and note is synthetic.
-- **Agents build it, and I check it.** [Claude Code](https://www.anthropic.com/claude-code) writes the code. I write the specs, review every change and decide what "correct" means.
+- **Agents build it, and I check it.** [Claude Code](https://www.anthropic.com/claude-code) writes the code. I write the specs, review every change and decide what 'correct' means.
 - **Small steps.** One change per pull request, and a tagged release and I'll try and also write a blog post at the end of each phase.
 
 My full plan is in the repo: [docs/eval-observability.md](https://github.com/nicetrygee/runway/blob/main/docs/eval-observability.md).
 
 ## Phase 0: the walking skeleton
 
-A **walking skeleton** is Alistair Cockburn's term for the thinnest version of a system that works end to end. I'll admit my first draft of the plan opened with seven pieces of careful groundwork, which is the planning equivalent of building a hangar before anything has flown. So I threw that away and decided to get one working loop up and running and let this teach me what the groundwork needed to be.
+A walking skeleton is Alistair Cockburn's term for the thinnest version of a system that works end to end. I'll admit my first draft of the plan opened with seven pieces of careful groundwork, which is the planning equivalent of building a hangar before anything has flown. So I threw that away and decided to get one working loop up and running and let this teach me what the groundwork needed to be.
 
 Phase 0 came in three pull requests ([spec here](https://github.com/nicetrygee/runway/blob/main/docs/slices/slice-e0-skeleton.md)):
 
@@ -62,7 +62,7 @@ Phase 0 came in three pull requests ([spec here](https://github.com/nicetrygee/r
 
 ![Diagram comparing live mode, which calls the model, with replay mode, which reads recorded answers instead](live-vs-replay.png "Live tests the model. Replay tests the code.")
 
-**Live** is flying the route: the model answers each note, and the answers are scored and saved as recordings. **Replay** is the investigators on the ground, running the recorded data back through their analysis in seconds while the aircraft stays in the hangar. Netflix used the same principle at much bigger scale. In 2023 their engineers described [replay traffic testing](https://netflixtechblog.com/migrating-critical-traffic-at-scale-with-no-downtime-part-1-ba1c7a1c7835): cloning production requests, sending them to the old and new systems, and comparing the responses before switching anyone over.
+Live is flying the route: the model answers each note, and the answers are scored and saved as recordings. Replay is the investigators on the ground, running the recorded data back through their analysis in seconds while the aircraft stays in the hangar. Netflix used the same principle at much bigger scale. In 2023 their engineers described [replay traffic testing](https://netflixtechblog.com/migrating-critical-traffic-at-scale-with-no-downtime-part-1-ba1c7a1c7835): cloning production requests, sending them to the old and new systems, and comparing the responses before switching anyone over.
 
 ## The first live run scores
 
@@ -84,11 +84,11 @@ Each mode answers one question, and keeping them separate is what makes the numb
 
 | | Live | Replay |
 |---|---|---|
-| **Question it answers** | Did the model's behaviour change? | Did my code or scoring change? |
-| **Calls the model?** | Yes | Never |
-| **Cost and time** | Slower, uses the laptop's memory | Seconds, free, runs anywhere |
-| **When to run it** | After changing the model, its settings or the prompt | After any other change |
-| **Its limit** | Results vary run to run, so one run is a sample | Only as fresh as the last live run |
+| Question it answers | Did the model's behaviour change? | Did my code or scoring change? |
+| Calls the model? | Yes | Never |
+| Cost and time | Slower, uses the laptop's memory | Seconds, free, runs anywhere |
+| When to run it | After changing the model, its settings or the prompt | After any other change |
+| Its limit | Results vary run to run, so one run is a sample | Only as fresh as the last live run |
 
 That last row is the trade-off to watch: replay trusts old recordings, so a new prompt means a fresh flight.
 
@@ -96,9 +96,9 @@ That last row is the trade-off to watch: replay trusts old recordings, so a new 
 
  - **Building the skeleton first was the right call.** The skeleton took a day and taught me more about the design than the plan did.
 
- - **Fake the clock.** This is standard trick in normal testing too. Quick Add turns "dentist Friday" into a real date, so the right answer depends on today's date. A test expecting 23 October would pass this week and fail next week. So each test sets its own "today", and the expected answer never goes stale. It also makes tricky cases easy to test, like "Friday" typed on a Friday.
+ - **Fake the clock.** This is standard trick in normal testing too. Quick Add turns 'dentist Friday' into a real date, so the right answer depends on today's date. A test expecting 23 October would pass this week and fail next week. So each test sets its own 'today', and the expected answer never goes stale. It also makes tricky cases easy to test, like 'Friday' typed on a Friday.
 
- - **Record the conditions as well as the answers.** A flight recorder captures the switch positions as well as the altitude. Qwen3 has a "thinking" mode, where it reasons step by step before answering. Quick Add works well without it, so I switched it off with an instruction inside Runway's own prompt. The setting lives in the code and appears in every trace, right next to the answers it affects.
+ - **Record the conditions as well as the answers.** A flight recorder captures the switch positions as well as the altitude. Qwen3 has a 'thinking' mode, where it reasons step by step before answering. Quick Add works well without it, so I switched it off with an instruction inside Runway's own prompt. The setting lives in the code and appears in every trace, right next to the answers it affects.
 
  - **Choose the aircraft for the route.** DeepSeek's R1 reasoning model is strong on hard problems, and slower and wordier than a quick extraction task needs. Essentially, a long-haul jet for a short hop. It'll be back later as a comparison.
 
@@ -124,7 +124,7 @@ Phase 1 takes the basic setup from this post and makes it something I can rely o
 
  - A cost check that stops tests running against a paid model unless I've explicitly asked for it, so a mistake doesn't run up a bill.
  - Every code change gets tested against saved answers rather than fresh ones, so if a score moves, I know my change caused it, not the model.
- - A written guide for how answers are scored, so "good" means the same thing every time.
+ - A written guide for how answers are scored, so 'good' means the same thing every time.
  - More test cases, especially the awkward ones.
  - A first comparison between a paid model and the local one, run several times so the result isn't just luck.
 
