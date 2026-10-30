@@ -3,7 +3,7 @@ title: "Tales from the Terminal"
 slug: "tales-from-the-terminal"
 photo: mythical-man-month.png
 photoAlt: "A shrink-wrapped copy of The Mythical Man-Month by Frederick P. Brooks, Jr., on a wooden table"
-date: 2026-10-31
+date: 2026-10-31T00:00:00+11:00
 draft: false
 ---
 
