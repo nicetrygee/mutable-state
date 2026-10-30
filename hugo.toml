@@ -13,3 +13,6 @@ title = "mutable state"
 # An image on its own line renders as a <figure> (see layouts/_default/_markup/render-image.html)
 [markup.goldmark.parser]
   wrapStandAloneImageWithinParagraph = false
+# Lets a figure take a size class on the line after it, e.g. {.small}
+[markup.goldmark.parser.attribute]
+  block = true

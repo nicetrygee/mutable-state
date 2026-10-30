@@ -18,6 +18,8 @@
     {{- errorf "%s: image %q not found. Put it in the post's folder next to index.md (see CLAUDE.md)." $.PageInner.File.Path $u.Path -}}
   {{- end -}}
 {{- end -}}
+{{- /* A {.small} line after the image adds its class (styled in baseof.html) */ -}}
+{{- with .Attributes.class }}{{ $class = trim (printf "%s %s" $class .) " " }}{{ end -}}
 {{- if .IsBlock -}}
 <figure>
   <img src="{{ $src }}" alt="{{ .PlainText }}"{{ with $class }} class="{{ . }}"{{ end }} loading="lazy">
