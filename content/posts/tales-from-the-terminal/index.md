@@ -10,23 +10,23 @@ draft: false
 ## if manual_mode: interrupted() else: lost()
 I build most of my side projects with coding agents now, and for a long time every way of working with them felt like choosing which way I'd rather be annoyed.
 
-In manual mode, I'm in on every step. Great! Love it! But the continual interrupts whenever it needs a decision drive me bonkers. In auto mode it gets on with the work, fast and quiet. Great! But before long I've lost sight of what's going on and lost control of my own project. I also read about people leaving agents to build overnight. Sounds great, but I would spend all morning reviewing all the PRs. I suspect the engineers who do this well choose work a test suite can check, like dependency upgrades or migrations, so a green build in the morning means it's ready to merge without a line-by-line review. Perhaps I need to get better at writing test cases.
+In manual mode, I'm in on every step. Great! Love it! But the continual interrupts whenever it needs a decision drive me bonkers. In auto mode it gets on with the work, fast and quiet. Great! But before long I've lost sight of what's going on and lost control of my own project. I also read about people leaving agents to build overnight. Sounds great, but am I not then going to be spending all morning reviewing a mountain of PRs. I suspect the engineers who get value from overnight runs pick work where 'done' can be easily signed off with a green build and the diff review is super lightweight. Dependency bumps, rolling out a lint rule, adding type annotations, or fixing flaky tests maybe. Or maybe work that produces something to read, instead of something to merge. A spike, or triaging a backlog.
 
 ## Switch faster, or review more?
-Two claims doing the rounds on Reddit offer an explanation. Engineering excellence has moved from flow to getting better at context switching, and the future of software engineering is code review. Don't they both just describe ways of living with the problem?
+Two claims doing the rounds on Reddit offer an explanation. Engineering excellence has moved from flow to context switching, and the future of software engineering is code review. One deals with the interruptions, and the other with the morning pile up. But don't they both just describe ways of living with the problem, rather than solving it??
 
 ## Moving the thinking upstream
 For most of this year I've used spec-driven development (SDD) on nearly everything I build. I write a specification first: what should the system do, the decisions behind it and how I'll know it's done.....then Claude builds against it.
 
-Last month I wrote a post about why that spec has to record your decisions rather than the tool's ([A Day of Spec-Driven Development with Spec-Kit]({{< relref "a-day-of-spec-driven-development-with-spec-kit" >}})). I'm no SDD evangelist but I genuinely do believe it's the best compromise I've found, and for two reasons:
+Last month I wrote a post about why that spec has to record your decisions rather than the tool's ([A Day of Spec-Driven Development with Spec-Kit]({{< relref "a-day-of-spec-driven-development-with-spec-kit" >}})). I'm no SDD evangelist but I genuinely do believe it's been a good compromise, and for two reasons:
 
- - The spec lets me concentrate. I am able to think long and hard before the agent starts, so nothing interrupts me, and the agent has far fewer reasons to stop and ask.
+ - The spec lets me concentrate. I'm able to think long and hard before the agent starts, without the agent interrupting me, and the agent has far fewer reasons to stop and ask.
  - I own the decisions. When I review the agent's work, I'm checking it against choices I made, which is much quicker than reconstructing why it did what it did.
 
 For me, flow is alive and well and it's moved upstream into the spec.
 
 ## Waterfall with a fresh coat of paint
-SDD does have a cost, and it has an old name: waterfall. Writing the spec first means two things:
+SDD does have a cost, and it has a familiar name: waterfall. Writing the spec first means two things:
 
  - I lose the builder's discovery. Halfway through writing code by hand, you notice the abstraction is wrong, or that two concepts are really one. That insight comes from wrestling with the code, but the agent is the one doing the wrestling now, not me.
  - I commit before I've learned anything. Decisions go into the spec when I know least about the problem.
