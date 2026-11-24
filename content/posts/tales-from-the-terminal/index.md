@@ -7,47 +7,54 @@ date: 2026-10-31T00:00:00+11:00
 draft: false
 ---
 
-## if manual_mode: interrupted() else: lost()
-I build most of my side projects with coding agents now, and for a long time every way of working with them felt like choosing which way I'd rather be annoyed.
+*Editor's note (Nov 2026):* This article was originally written following my reading of the 1975 first edition of The Mythical Man-Month. I've since revisited and revised my thinking after reading the 1995 20th anniversary edition, incorporating Brooks' later reflections and the additional essays. The article has been updated to reflect that broader perspective.
 
-In manual mode, I'm in on every step. Great! Love it! But the continual interrupts whenever it needs a decision drive me bonkers. In auto mode it gets on with the work, fast and quiet. Great! But before long I've lost sight of what's going on and lost control of my own project. I also read about people leaving agents to build overnight. Sounds great, but am I not then going to be spending all morning reviewing a mountain of PRs? I suspect the engineers who get value from overnight runs pick work where 'done' can be easily signed off with a green build and the diff review is super lightweight. Dependency bumps, rolling out a lint rule, adding type annotations, or fixing flaky tests maybe. Or maybe work that produces something to read, instead of something to merge. A spike, or triaging a backlog.
+
+## if manual_mode: interrupted() else: lost()
+I build all of my projects with coding agents now, and for a long time every way of working with them felt like choosing which way I'd rather be annoyed.
+
+In manual mode, I'm in on every step. Great! Love it! But the continual interrupts whenever it needs a decision drive me bonkers. In auto mode it gets on with the work, fast and quiet. Great! But before long I've lost sight of what's going on and lost control of my own project. I also read about people leaving agents to build overnight. Sounds great, but am I not then going to be spending all of the following day either reviewing a 7000 line diff or a mountain of ~400 line PRs? I suspect the engineers who get value from overnight runs pick work where 'done' can be easily signed off with a green build and the diff review doesn't require them to pore over it in fine detail. So maybe dependency bumps, rolling out a lint rule, adding type annotations, or fixing flaky tests. Or maybe work that produces something to read, instead of something to merge. Like a spike, or triaging a backlog.
 
 ## Switch faster, or review more?
-Two claims doing the rounds on Reddit offer an explanation. Engineering excellence has moved from flow to context switching, and the future of software engineering is code review. One deals with the interruptions, and the other with the morning pile up. But don't they both just describe ways of living with the problem, rather than solving it??
+Two claims doing the rounds on Reddit offer an explanation into the mindset of some people. First, 'engineering excellence has moved from flow to context switching', and the other is 'the future of software engineering is code review'. Both accept the problem, rather than solving it and I don't want to do either of those things. I want to get into flow and stay there.
 
-## Moving the thinking upstream
-For most of this year I've used spec-driven development (SDD) on nearly everything I build. I write a specification first: what should the system do, the decisions behind it and how I'll know it's done.....then Claude builds against it.
+## A new recipe for flow state
+Since, I wrote a blog post earlier in the year called [A Day of Spec-Driven Development with Spec-Kit]({{< relref "a-day-of-spec-driven-development-with-spec-kit" >}}), I've used Spec-Kit on nearly everything I've built, and I've found it to be an absolute game changer. 
 
-Last month I wrote a post about why that spec has to record your decisions rather than the tool's ([A Day of Spec-Driven Development with Spec-Kit]({{< relref "a-day-of-spec-driven-development-with-spec-kit" >}})). I'm no SDD evangelist but I genuinely do believe it's been a good compromise, and for two reasons:
+First, I find SDD gives me a way to establish clear decision boundaries before implementation begins. It forces me to think through the key decisions at each stage, define constraints and resolve ambiguity before the agent starts working. The result is fewer interruptions, fewer clarification loops and much less context switching.
 
- - The spec lets me concentrate. I'm able to think long and hard before the agent starts, without the agent interrupting me, and the agent has far fewer reasons to stop and ask.
- - I own the decisions. When I review the agent's work, I'm checking it against choices I made, which is much quicker than reconstructing why it did what it did.
+More importantly, I retain ownership of the decisions. When reviewing the agent's output, I'm validating it against an agreed set of requirements, constraints and architectural choices that I've already considered and approved. I'm not trying to reverse-engineer the agent's reasoning or reconstruct why it made particular decisions.
 
-For me, flow is alive and well and it's moved upstream into the spec.
+The interesting thing is that flow state hasn't disappeared; it's just moved upstream. I'm now spending more of my uninterrupted thinking time shaping the spec and making decisions, while the agent handles the implementation. I'm still doing the thinking; I'm just changing when and where it happens.
 
-## Waterfall with a fresh coat of paint
-SDD does have a cost, and it has a familiar name: waterfall. Writing the spec first means two things:
 
- - I lose the builder's discovery. Halfway through writing code by hand, you notice the abstraction is wrong, or that two concepts are really one. That insight comes from wrestling with the code, but the agent is the one doing the wrestling now, not me.
- - I commit before I've learned anything. Decisions go into the spec when I know least about the problem.
+## It's only Waterfall if you do it poorly
+At first glance, SDD reintroduces several Waterfall style practices that Agile deliberately moved away from. For example, big upfront specs, more formal documentation, and reduced developer discretion. I would argue that it only resembles Waterfall if it's poorly implemented.
 
-One of my favourite books of all time is Fred Brooks's 1975 masterpiece, [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month). In the book he pointed to chemical engineers, who don't take a process straight from the lab bench to a full-sized factory. They build a pilot plant first, to learn what the lab couldn't tell them. His advice for software was to plan to throw one away, because you will anyhow. However, we kinda skipped the pilot, because building everything twice was too expensive.
+Done right, SDD establishes direction and boundaries, and doesn't prescribe every implementation detail. Here's the feedback loop it creates:
 
-## Fred's pilot plant is affordable now
-With an agent, the first build now costs me a couple of hours. So before I write a spec, I have the agent build a quick throwaway version from a rough description, and I learn from it in three ways.
+ - Define the problem, constraints and architectural decisions.
+ - Break the work into small, independently deliverable increments.
+ - Implement one increment.
+ - Validate against the spec.
+ - Review what was learned and update the spec where necessary.
+ - Move to the next increment.
 
-First, I use it. Clicking through shows me where the workflow feels wrong before any of it reaches the spec. Then I read its defaults, because the pilot shows what the agent does when I haven't told it anything, including its structure, naming, data model and error handling. My spec then records where I disagree. Lastly, I look for wherever the code is messy or confused, and the problem is usually badly defined, and that's where I need to go and think about the spec.
+SDD and Agile are complementary. SDD provides the clarity and decision ownership and Agile provides the iterative execution and adaptation. The objective isn't to eliminate developer involvement or lock down every implementation decision. It's to move avoidable decision-making upstream so that implementation can happen with fewer interruptions.
 
-Sure, I'm watching the struggle rather than living it, and as a result I learn less than I would if I was writing the code myself. Even so, I get a good share of the discovery back for a fraction of the cost, and because regenerating code is so cheap now, most decisions in the spec are easy to reverse. The bits still worth agonising over are those familiar stalwarts that cheap code can't undo, like a schema with live data in it.
+## The Mythical Man-Month
+One of my favourite books of all time is Fred Brooks's 1975 masterpiece, [The Mythical Man-Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month). Brooks was writing about the economics and psychology of software engineering decades before AI agents existed but several of his observations map remarkably well to the challenges of agentic development.
 
-## The pilot that never gets thrown away
-Here's my confession: I find it very tempting never to throw the pilot away. It works! Rebuilding it from a spec often produces something that looks more or less the same, so it feels like ceremony.
+Brooks argues that great software needs conceptual integrity: a coherent design philosophy and a consistent set of ideas underpinning the system. This is particularly relevant to AI-assisted development because an agent can produce technically competent code while making decisions that are individually reasonable but collectively inconsistent. SDD provides a mechanism for establishing conceptual integrity before implementation.
 
-When I'm disciplined, I remind myself what the second build is really for. The pilot's code reflects the agent's defaults, and code built from the spec reflects my decisions. If I keep the pilot and write the spec afterwards, the spec just records the choices the agent already made. That's auto mode again, with a write-up attached.
+## Optimise the size of the learning loop, not the size of the spec.
+The most poignant insight from the book is that the first version of a system is often a learning exercise and you should expect to discover things that invalidate your initial assumptions. This is a useful counterbalance to SDD and there's a danger that teams interpret SDD as a requirement to get everything right before implementation but that's not the lesson I'd take from Brooks. The spec should be a living representation of current understanding, not a contract that prevents discovery. Brooks also advocates modularity, precise interfaces and controlled changes to make systems easier to evolve. These principles translate naturally into small PRs and bounded agent tasks. In other words, avoid enormous AI-generated PRs. They defer feedback, accumulate assumptions and make it harder to isolate mistakes.
 
-![Diagram of a loop: rough idea, throwaway pilot, learn from it (use it, read its defaults, spot the struggle), write the spec, rebuild from the spec, then on to the next feature. A dashed red branch from the pilot labelled 'the tempting shortcut' leads to 'Keep it', then to 'Auto mode, with a write-up attached'](pilot-then-spec.png "Build a pilot, learn from it, and maybe err keep it.")
-{.small}
+## My recommendation for flow state with agents
+Think before you build. Move cognitive effort upstream.
+Constrain the work, not the creativity. Give agents autonomy within clearly defined boundaries.
+Shorten the feedback loop. Small PRs, automated validation and continuous learning.
+Protect the human's flow. Minimise interruptions, context switching and repetitive decision-making.
 
-There's a reasonable middle path: keep the pilot, write the spec as a list of changes and have the agent refactor towards it. Everything I noticed and disagreed with gets fixed, but a list of changes only covers what I happened to spot. A full spec makes me think through every part of the system, including the parts I'd never have looked at.
-
-So Brooks's advice is finally affordable, and I still find it hard to follow :) Chemical engineers have it easier if you ask me. Who's going to be tempted to run a city's water supply through the pilot plant!?!?
+## Final thoughts
+The central insight I'd take from Brooks is that software engineering has always been as much about managing complexity and preserving conceptual integrity as it has been about writing code. AI changes the economics of implementation but it doesn't remove the need for good engineering judgement. Flow state is about using that new implementation capacity without sacrificing the thinking, coherence and craftsmanship that make good software possible.
